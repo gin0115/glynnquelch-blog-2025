@@ -4,6 +4,7 @@
 .svn
 init.sh
 templates/*
+languages/* 
 
 # Theme and Plugin handling
 #
