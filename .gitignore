@@ -4,7 +4,7 @@
 .svn
 init.sh
 templates/*
-wp-content/languages/*
+languages/*
 
 # Theme and Plugin handling
 #
@@ -13,22 +13,24 @@ wp-content/languages/*
 #
 # example exclusion:
 #
-# !wp-content/plugins/jetpack
-# !wp-content/mu-plugins/hello.php
-# !wp-content/themes/twentyseventeen
+# !plugins/jetpack
+# !mu-plugins/hello.php
+# !themes/twentyseventeen
 #
-wp-content/plugins/*
-
-wp-content/mu-plugins/*
-!wp-content/mu-plugins/mu-loader.php
+plugins/*
 
 
 
-wp-content/themes/*
-!wp-content/themes/yuki-cyber-blog-child
+mu-plugins/*
+!mu-plugins/mu-loader.php
+
+
+
+themes/*
+!themes/yuki-cyber-blog-child
 
 
 
 # Other wp-content exclusions
-wp-content/upgrade/*
-wp-content/uploads/*
+upgrade/*
+uploads/*
