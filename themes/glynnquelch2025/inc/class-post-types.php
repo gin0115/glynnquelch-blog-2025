@@ -35,7 +35,6 @@ class Post_Types {
 		add_filter( 'get_the_archive_title', array( $this, 'remove_archive_title_prefix' ), 10, 3 );
 	}
 
-	// apply_filters( 'get_the_archive_title', $title, $original_title, $prefix )
 	/**
 	 * Remove the prefix from archive titles for projects.
 	 *
