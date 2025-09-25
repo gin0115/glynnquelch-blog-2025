@@ -2,43 +2,72 @@
 /**
  * Theme bootstrap
  *
- * @package Yuki Cyber Blog
+ * @package GlynnQuelch2025
+ * @author  Glynn Quelch
+ * @since   1.0.0
  */
 
-// don't call the file directly
+// Don't call the file directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! defined( 'YUKI_CYBER_BLOG_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( 'YUKI_CYBER_BLOG_VERSION', '1.0.0' );
-}
-
-if ( ! defined( 'YUKI_CYBER_BLOG_PATH' ) ) {
-	define( 'YUKI_CYBER_BLOG_PATH', trailingslashit( get_stylesheet_directory() ) );
-}
-
-if ( ! defined( 'YUKI_CYBER_BLOG_URL' ) ) {
-	define( 'YUKI_CYBER_BLOG_URL', trailingslashit( get_stylesheet_directory_uri() ) );
-}
-
-if ( ! defined( 'YUKI_CYBER_BLOG_ASSETS_URL' ) ) {
-	define( 'YUKI_CYBER_BLOG_ASSETS_URL', YUKI_CYBER_BLOG_URL . 'assets/' );
-}
-
-if ( ! function_exists( 'yuki_cyber_blog_image_url' ) ) {
+if ( ! defined( 'GQ2025_VERSION' ) ) {
 	/**
-	 * Get image url
+	 * Theme version number.
 	 *
-	 * @param $image
-	 *
-	 * @return string
+	 * @since 1.0.0
 	 */
-	function yuki_cyber_blog_image_url( $image ) {
-		return YUKI_CYBER_BLOG_ASSETS_URL . 'images/' . $image;
+	define( 'GQ2025_VERSION', '1.0.0' );
+}
+
+if ( ! defined( 'GQ2025_PATH' ) ) {
+	/**
+	 * Theme directory path.
+	 *
+	 * @since 1.0.0
+	 */
+	define( 'GQ2025_PATH', trailingslashit( get_stylesheet_directory() ) );
+}
+
+if ( ! defined( 'GQ2025_URL' ) ) {
+	/**
+	 * Theme directory URL.
+	 *
+	 * @since 1.0.0
+	 */
+	define( 'GQ2025_URL', trailingslashit( get_stylesheet_directory_uri() ) );
+}
+
+if ( ! defined( 'GQ2025_ASSETS_URL' ) ) {
+	/**
+	 * Theme assets URL.
+	 *
+	 * @since 1.0.0
+	 */
+	define( 'GQ2025_ASSETS_URL', GQ2025_URL . 'assets/' );
+}
+
+if ( ! function_exists( 'glynnquelch2025_image_url' ) ) {
+	/**
+	 * Get image URL from theme assets.
+	 *
+	 * @param string $image The image filename.
+	 *
+	 * @return string The complete image URL.
+	 * @since 1.0.0
+	 */
+	function glynnquelch2025_image_url( string $image ): string {
+		return GQ2025_ASSETS_URL . 'images/' . $image;
 	}
 }
 
-// require customizer options
-require_once YUKI_CYBER_BLOG_PATH . 'customizer.php';
+// Require customizer options.
+require_once GQ2025_PATH . 'customizer.php';
+// Require starter content options.
+require_once GQ2025_PATH . 'starter-content.php';
+
+// Require additional classes and functions.
+require_once GQ2025_PATH . 'inc/class-acf.php';
+require_once GQ2025_PATH . 'inc/class-post-types.php';
+require_once GQ2025_PATH . 'inc/class-media.php';

@@ -1,4 +1,4 @@
-=== Yuki Cyber Blog ===
+=== GlynnQuelch 2025 Blog ===
 Contributors: wpmoose
 Author: WP Moose
 Requires at least: WordPress 5.2+
@@ -15,7 +15,7 @@ A minimalist and customizable free WordPress blog theme. You can fully customize
 
 == Copyright ==
 
-Yuki Cyber Blog is licensed under the GNU General Public License v2 or later
+GlynnQuelch 2025 Blog is licensed under the GNU General Public License v2 or later
 
 More details [here](http://www.gnu.org/licenses/gpl-2.0.html).
 

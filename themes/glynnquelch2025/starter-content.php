@@ -2,27 +2,35 @@
 /**
  * Theme starter content
  *
- * @package Yuki Cyber Blog
+ * @package GlynnQuelch2025
+ * @author  Glynn Quelch
+ * @since   1.0.0
  */
+
+// Don't call the file directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 //
 // Starter content
 //
-if ( ! function_exists( 'yuki_cyber_blog_starter_content' ) ) {
+if ( ! function_exists( 'gq_2025_starter_content' ) ) {
 	/**
 	 * Change starter content
 	 *
-	 * @param $content
+	 * @param array<string, mixed> $content The starter content configuration.
 	 *
-	 * @return mixed
+	 * @return array<string, mixed>
+	 * @since 1.0.0
 	 */
-	function yuki_cyber_blog_starter_content( $content ) {
+	function gq_2025_starter_content( $content ) {
 		return array(
 			'widgets'   => $content['widgets'],
 			'posts'     => array(
 				'home' => array(
 					'post_type'    => 'page',
-					'post_title'   => __( 'Home', 'yuki-cyber-blog' ),
+					'post_title'   => __( 'Home', 'gq-2025' ),
 					'post_content' => '',
 				),
 				'about',
@@ -31,7 +39,7 @@ if ( ! function_exists( 'yuki_cyber_blog_starter_content' ) ) {
 			),
 			'nav_menus' => array(
 				'yuki_header_el_menu_1' => array(
-					'name'  => __( 'Top Bar Menu', 'yuki-cyber-blog' ),
+					'name'  => __( 'Top Bar Menu', 'gq-2025' ),
 					'items' => array(
 						'link_home',
 						'page_about',
@@ -41,7 +49,7 @@ if ( ! function_exists( 'yuki_cyber_blog_starter_content' ) ) {
 					),
 				),
 				'yuki_header_el_menu_2' => array(
-					'name'  => __( 'Primary Menu', 'yuki-cyber-blog' ),
+					'name'  => __( 'Primary Menu', 'gq-2025' ),
 					'items' => array(
 						'link_home',
 						'page_about',
@@ -50,7 +58,7 @@ if ( ! function_exists( 'yuki_cyber_blog_starter_content' ) ) {
 					),
 				),
 				'yuki_footer_el_menu'   => array(
-					'name'  => __( 'Footer Menu', 'yuki-cyber-blog' ),
+					'name'  => __( 'Footer Menu', 'gq-2025' ),
 					'items' => array(
 						'link_home',
 						'page_about',
@@ -67,35 +75,37 @@ if ( ! function_exists( 'yuki_cyber_blog_starter_content' ) ) {
 		);
 	}
 }
-add_filter( 'yuki_starter_content', 'yuki_cyber_blog_starter_content' );
+add_filter( 'yuki_starter_content', 'gq_2025_starter_content' );
 
 //
 // Homepage design
 //
 
-if ( ! function_exists( 'yuki_cyber_blog_homepage_builder_id' ) ) {
+if ( ! function_exists( 'gq_2025_homepage_builder_id' ) ) {
 	/**
 	 * Change default homepage builder id
 	 *
 	 * @return string
+	 * @since 1.0.0
 	 */
-	function yuki_cyber_blog_homepage_builder_id() {
-		return 'yuki_cyber_blog_homepage_builder';
+	function gq_2025_homepage_builder_id() {
+		return 'gq_2025_homepage_builder';
 	}
 }
-add_filter( 'yuki_homepage_builder_id', 'yuki_cyber_blog_homepage_builder_id' );
+add_filter( 'yuki_homepage_builder_id', 'gq_2025_homepage_builder_id' );
 
-if ( ! function_exists( 'yuki_cyber_blog_homepage_heading' ) ) {
+if ( ! function_exists( 'gq_2025_homepage_heading' ) ) {
 	/**
 	 * Generate heading element
 	 *
-	 * @param $title
-	 * @param $sub_title
-	 * @param $settings
+	 * @param string               $title     The heading title.
+	 * @param string               $sub_title The heading subtitle.
+	 * @param array<string, mixed> $settings  Additional settings for the heading.
 	 *
-	 * @return array
+	 * @return array<string, mixed>
+	 * @since 1.0.0
 	 */
-	function yuki_cyber_blog_homepage_heading( $title, $sub_title = '', $settings = array() ) {
+	function gq_2025_homepage_heading( $title, $sub_title = '', $settings = array() ) {
 		return array(
 			'id'       => 'heading',
 			'settings' => wp_parse_args(
@@ -128,13 +138,14 @@ if ( ! function_exists( 'yuki_cyber_blog_homepage_heading' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yuki_cyber_blog_homepage_design' ) ) {
+if ( ! function_exists( 'gq_2025_homepage_design' ) ) {
 	/**
 	 * Override default homepage design
 	 *
-	 * @return array
+	 * @return array<int, array<string, mixed>>
+	 * @since 1.0.0
 	 */
-	function yuki_cyber_blog_homepage_design() {
+	function gq_2025_homepage_design() {
 		return array(
 			// Posts Grid
 			array(
@@ -160,9 +171,9 @@ if ( ! function_exists( 'yuki_cyber_blog_homepage_design' ) ) {
 										'mobile'  => 1,
 									),
 									'items-gap'       => '48px',
-									'card_background' => yuki_cyber_blog_base_100_background(),
-									'card_border'     => yuki_cyber_blog_card_border(),
-									'card_shadow'     => yuki_cyber_blog_card_shadow(),
+									'card_background' => gq_2025_base_100_background(),
+									'card_border'     => gq_2025_card_border(),
+									'card_shadow'     => gq_2025_card_shadow(),
 									'yuki_el_tax_style_cats' => 'badge',
 									'yuki_el_tax_badge_bg_color_cats' => array(
 										'initial' => 'var(--yuki-primary-color)',
@@ -216,7 +227,7 @@ if ( ! function_exists( 'yuki_cyber_blog_homepage_design' ) ) {
 							array(
 								'id'       => 'heading',
 								'settings' => array(
-									'title'            => __( 'Top pick for you', 'yuki-cyber-blog' ),
+									'title'            => __( 'Top pick for you', 'gq-2025' ),
 									'sub-title'        => '',
 									'title-tag'        => 'h3',
 									'alignment'        => 'center',
@@ -289,7 +300,7 @@ if ( ! function_exists( 'yuki_cyber_blog_homepage_design' ) ) {
 							array(
 								'id'       => 'heading',
 								'settings' => array(
-									'title'            => __( 'You may also like', 'yuki-cyber-blog' ),
+									'title'            => __( 'You may also like', 'gq-2025' ),
 									'sub-title'        => '',
 									'title-tag'        => 'h3',
 									'alignment'        => 'center',
@@ -446,4 +457,4 @@ if ( ! function_exists( 'yuki_cyber_blog_homepage_design' ) ) {
 		);
 	}
 }
-add_filter( 'yuki_cyber_blog_homepage_builder_default_value', 'yuki_cyber_blog_homepage_design' );
+add_filter( 'gq_2025_homepage_builder_default_value', 'gq_2025_homepage_design' );
