@@ -48,6 +48,32 @@ if ( ! defined( 'GQ2025_ASSETS_URL' ) ) {
 	define( 'GQ2025_ASSETS_URL', GQ2025_URL . 'assets/' );
 }
 
+/**
+ * Prints HTML with categories information for the current post.
+ *
+ * Override to allow custom post types.
+ *
+ * @param string $before Text to display before the categories.
+ * @param string $after  Text to display after the categories.
+ * @param array  $style  CSS classes to apply to the category links.
+ *
+ * @return void
+ */
+function yuki_post_categories( $before = '', $after = '', $style = array() ) {
+	// Hide category for pages.
+	if ( 'page' === get_post_type() || empty( get_the_category() ) ) {
+		return;
+	}
+	global $wp_rewrite;
+	$style = esc_attr( \LottaFramework\Utils::clsx( $style ) );
+	$rel   = ( is_object( $wp_rewrite ) && $wp_rewrite->using_permalinks() ? 'rel="category tag"' : 'rel="category"' );
+	echo $before;
+	foreach ( get_the_category() as $category ) {
+		echo '<a class="' . $style . '" href="' . esc_url( get_category_link( $category->term_id ) ) . '" ' . $rel . '>' . esc_html( $category->name ) . '</a>';
+	}
+	echo $after;
+}
+
 if ( ! function_exists( 'glynnquelch2025_image_url' ) ) {
 	/**
 	 * Get image URL from theme assets.
