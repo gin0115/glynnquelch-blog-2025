@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Yuki Cyber Blog 1.0.0\n"
+"Project-Id-Version: GlynnQuelch 2025 Blog 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/yuki-cyber-blog\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #. Theme Name of the theme
 #: style.css
-msgid "Yuki Cyber Blog"
+msgid "GlynnQuelch 2025 Blog"
 msgstr ""
 
 #. Theme URI of the theme
