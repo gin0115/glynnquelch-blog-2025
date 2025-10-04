@@ -88,6 +88,31 @@ if ( ! function_exists( 'glynnquelch2025_image_url' ) ) {
 	}
 }
 
+/**
+ * Enqueue child theme styles.
+ *
+ * @return void
+ * @since 1.0.0
+ */
+function glynnquelch2025_enqueue_styles() {
+	// Enqueue parent theme styles.
+	wp_enqueue_style(
+		'yuki-parent-style',
+		get_template_directory_uri() . '/style.css',
+		array(),
+		wp_get_theme()->parent()->get( 'Version' )
+	);
+
+	// Enqueue child theme styles.
+	wp_enqueue_style(
+		'glynnquelch2025-style',
+		get_stylesheet_uri(),
+		array( 'yuki-parent-style' ),
+		GQ2025_VERSION
+	);
+}
+add_action( 'wp_enqueue_scripts', 'glynnquelch2025_enqueue_styles' );
+
 // Require customizer options.
 require_once GQ2025_PATH . 'customizer.php';
 // Require starter content options.
@@ -97,3 +122,4 @@ require_once GQ2025_PATH . 'starter-content.php';
 require_once GQ2025_PATH . 'inc/class-acf.php';
 require_once GQ2025_PATH . 'inc/class-post-types.php';
 require_once GQ2025_PATH . 'inc/class-media.php';
+require_once GQ2025_PATH . 'inc/class-block-customizations.php';
