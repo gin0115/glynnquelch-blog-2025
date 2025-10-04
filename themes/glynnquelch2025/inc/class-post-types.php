@@ -352,14 +352,24 @@ class Post_Types {
 		}
 
 		if ( $query->is_archive() || $query->is_search() ) {
+			// Don't modify software archive - let it show only software posts
+			if ( $query->is_post_type_archive( 'software' ) ) {
+				return;
+			}
+			
 			$post_types = $query->get( 'post_type' );
 
 			if ( empty( $post_types ) ) {
-				$post_types = array( 'post', 'project' );
+				$post_types = array( 'post', 'project', 'software' );
 			} elseif ( is_string( $post_types ) ) {
-				$post_types = array( $post_types, 'project' );
-			} elseif ( is_array( $post_types ) && ! in_array( 'project', $post_types, true ) ) {
+				$post_types = array( $post_types, 'project', 'software' );
+			} elseif ( is_array( $post_types ) ) {
+				if ( ! in_array( 'project', $post_types, true ) ) {
 				$post_types[] = 'project';
+				}
+				if ( ! in_array( 'software', $post_types, true ) ) {
+					$post_types[] = 'software';
+				}
 			}
 
 			$query->set( 'post_type', $post_types );

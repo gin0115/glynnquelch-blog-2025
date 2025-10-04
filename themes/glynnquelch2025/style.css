@@ -101,3 +101,12 @@ Tags: personal, portfolio, blog, custom-colors, custom-header, custom-logo, cust
     height: 100%;
     fill: currentColor;
 }
+
+
+/* Hide hamburger menu button on desktop */
+
+@media (min-width: 1024px) {
+    .yuki-trigger.yuki-toggleable {
+        display: none !important;
+    }
+}
