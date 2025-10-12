@@ -19,15 +19,20 @@ languages/*
 #
 plugins/*
 
+*/node_modules/*
+
 
 
 mu-plugins/*
 !mu-plugins/mu-loader.php
+!mu-plugins/tobacco-archive
 
 
 
 themes/*
 !themes/glynnquelch2025
+
+TR
 
 
 

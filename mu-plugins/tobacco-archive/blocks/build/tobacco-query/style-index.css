@@ -1,0 +1,675 @@
+.tobacco-query-block {
+    background: var(--yuki-form-background-color);
+    border-bottom: var(--yuki-form-border-bottom);
+    border-left: var(--yuki-form-border-left);
+    border-radius: 2px;
+    border-right: var(--yuki-form-border-right);
+    border-top: var(--yuki-form-border-top);
+    padding: 1rem
+}
+
+.tobacco-query-block .tobacco-query-loading {
+    color: var(--yuki-form-text-color, inherit);
+    font-style: italic;
+    padding: 2rem;
+    text-align: center
+}
+
+.tobacco-query-block .tobacco-query-filters {
+    background: var(--yuki-form-background-color);
+    border-bottom: var(--yuki-form-border-bottom);
+    border-left: var(--yuki-form-border-left);
+    border-radius: 2px;
+    border-right: var(--yuki-form-border-right);
+    border-top: var(--yuki-form-border-top);
+    margin-bottom: 2rem;
+    padding: 1rem
+}
+
+.tobacco-query-block .tobacco-query-filters h3 {
+    border-bottom: 2px solid var(--yuki-form-active-color);
+    font-size: 18px;
+    margin-bottom: 1rem!important;
+    margin-top: 0!important;
+    padding-bottom: 8px
+}
+
+
+/* Active Filters Display */
+
+.tobacco-query-block .tobacco-query-filters .active-filters {
+    background: var(--yuki-form-background-color);
+    border: 1px solid var(--yuki-form-border-color);
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap
+}
+
+.tobacco-query-block .tobacco-query-filters .active-filters-label {
+    font-weight: 600;
+    color: var(--yuki-form-text-color, inherit);
+    font-size: 0.9rem
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex: 1
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-chip {
+    display: inline-flex;
+    align-items: center;
+    background: var(--yuki-accent-color);
+    color: var(--yuki-base-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 1px solid var(--yuki-accent-color)
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-chip:hover {
+    background: var(--yuki-accent-active);
+    border-color: var(--yuki-accent-active)
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-chip .chip-label {
+    margin-right: 0.5rem
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-chip .chip-remove {
+    background: none;
+    border: none;
+    color: var(--yuki-base-color);
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0;
+    margin-left: 0.4rem;
+    transition: opacity 0.2s ease;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-chip .chip-remove:hover {
+    opacity: 0.7
+}
+
+.tobacco-query-block .tobacco-query-filters .clear-all-btn {
+    background: var(--yuki-form-background-color);
+    border: 1px solid var(--yuki-form-border-color);
+    color: var(--yuki-form-text-color, inherit);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap
+}
+
+.tobacco-query-block .tobacco-query-filters .clear-all-btn:hover {
+    background: var(--yuki-form-active-color);
+    border-color: var(--yuki-form-active-color);
+    color: #fff
+}
+
+
+/* Filter Options Layout */
+
+.tobacco-query-block .tobacco-query-filters .filter-options {
+    margin-bottom: 1rem
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-item {
+    display: flex;
+    flex-direction: column
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-item label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--yuki-form-text-color, inherit);
+    font-size: 0.9rem
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-select {
+    background: var(--yuki-form-background-color);
+    border: 1px solid var(--yuki-form-border-color);
+    border-radius: 4px;
+    color: var(--yuki-form-text-color, inherit);
+    display: block;
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+    transition: all 0.2s ease;
+    width: 100%;
+    min-height: 2.5rem
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-select:focus {
+    border-color: var(--yuki-form-active-color);
+    box-shadow: 0 0 0 2px rgba(var(--yuki-form-active-color), 0.1);
+    outline: none
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-select option {
+    padding: 0.5rem
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .tobacco-query-block .tobacco-query-filters .filter-row {
+        grid-template-columns: 1fr;
+        gap: 0.8rem
+    }
+    .tobacco-query-block .tobacco-query-filters .active-filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem
+    }
+    .tobacco-query-block .tobacco-query-filters .filter-chips {
+        width: 100%
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .tobacco-query-block .tobacco-query-filters .filter-row {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-results {
+    color: var(--yuki-form-text-color, inherit);
+    font-size: 14px;
+    font-style: italic
+}
+
+.tobacco-query-block .tobacco-query-filters .filter-results .results-text {
+    font-weight: 500
+}
+
+.tobacco-query-block .tobacco-query-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(var(--grid-columns, 3), 1fr);
+    margin-bottom: 2rem
+}
+
+@media(max-width:768px) {
+    .tobacco-query-block .tobacco-query-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+@media(min-width:769px)and (max-width:1024px) {
+    .tobacco-query-block .tobacco-query-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+.tobacco-query-block .tobacco-query-item {
+    background: var(--yuki-transparent);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all .3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tobacco-query-block .tobacco-query-item:hover {
+    box-shadow: none !important;
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-image-container {
+    position: relative;
+    height: 250px;
+    width: 250px;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: var(--yuki-accent-color);
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 !important;
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, var(--yuki-base-color) 0%, var(--yuki-base-color) 60%, transparent 100%);
+    padding: 15px 15px 10px;
+    color: var(--yuki-accent-active);
+    height: 60px;
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-overlay .tobacco-item-title {
+    font-size: 16px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-overlay .tobacco-item-title .brand-name {
+    display: block;
+    font-weight: 600;
+    color: var(--yuki-primary-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-overlay .tobacco-item-title .blend-name {
+    font-weight: 400;
+    opacity: 0.9;
+    color: var(--yuki-accent-active);
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-details {
+    margin-bottom: 1rem
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-details p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: .25rem 0
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-details p strong {
+    font-weight: 600
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-profile {
+    margin-bottom: 1rem
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-profile h5 {
+    border-bottom: 1px solid var(--yuki-form-border-top);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 .5rem;
+    padding-bottom: 4px
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-profile .profile-ratings .profile-rating {
+    border-left: 2px solid var(--yuki-form-active-color);
+    font-size: 13px;
+    margin: .25rem 0;
+    padding-left: .5rem
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-profile .profile-ratings .profile-rating strong {
+    font-weight: 600
+}
+
+.tobacco-query-block .tobacco-query-item .tobacco-item-description p {
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+    opacity: .8
+}
+
+.tobacco-query-block .tobacco-query-pagination {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem
+}
+
+.tobacco-query-block .tobacco-query-pagination .pagination-btn {
+    background: var(--yuki-form-background-color);
+    border-bottom: var(--yuki-form-border-bottom);
+    border-left: var(--yuki-form-border-left);
+    border-radius: 2px;
+    border-right: var(--yuki-form-border-right);
+    border-top: var(--yuki-form-border-top);
+    color: var(--yuki-form-text-color, inherit);
+    cursor: pointer;
+    padding: .5rem 1rem;
+    transition: all .3s ease
+}
+
+.tobacco-query-block .tobacco-query-pagination .pagination-btn:hover:not(:disabled) {
+    background: var(--yuki-form-active-color);
+    border-color: var(--yuki-form-active-color);
+    color: #fff
+}
+
+.tobacco-query-block .tobacco-query-pagination .pagination-btn:disabled {
+    cursor: not-allowed;
+    opacity: .5
+}
+
+.tobacco-query-block .tobacco-query-pagination .pagination-info {
+    color: var(--yuki-form-text-color, inherit);
+    font-size: 14px
+}
+
+.tobacco-query-block .tobacco-query-pagination .pagination-info .current-page,
+.tobacco-query-block .tobacco-query-pagination .pagination-info .total-pages {
+    font-weight: 600
+}
+
+
+/* Modal Styles */
+
+.tobacco-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--yuki-transparent);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.tobacco-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer
+}
+
+.tobacco-modal-content {
+    background-color: var(--yuki-base-color);
+    margin: auto;
+    padding: 30px;
+    border: 1px solid var(--yuki-accent-color);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 20px 40px var(--yuki-transparent);
+    max-height: 90vh;
+    overflow-y: auto;
+    color: var(--yuki-content-base-color);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.tobacco-modal-close {
+    color: var(--yuki-content-base-color);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    background: var(--yuki-transparent);
+    border: none;
+    padding: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    line-height: 1;
+    z-index: 10;
+}
+
+.tobacco-modal-close:hover,
+.tobacco-modal-close:focus {
+    color: var(--yuki-primary-active);
+    background-color: var(--yuki-transparent);
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.tobacco-modal-header {
+    border-bottom: 1px solid var(--yuki-accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px
+}
+
+.tobacco-modal-title {
+    font-size: 24px;
+    margin: 0;
+    line-height: 1.2
+}
+
+.tobacco-modal-title .brand-name {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.7
+}
+
+.tobacco-modal-title .blend-name {
+    display: block;
+    font-weight: 700
+}
+
+.tobacco-modal-rating {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--yuki-primary-color);
+    margin-top: 10px
+}
+
+.tobacco-modal-rating .review-count {
+    font-weight: 400;
+    opacity: 0.8;
+    margin-left: 5px
+}
+
+.tobacco-modal-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 20px
+}
+
+.tobacco-modal-left {
+    display: flex;
+    flex-direction: column
+}
+
+.tobacco-modal-right {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center
+}
+
+.tobacco-modal-image {
+    text-align: center;
+    width: 100%
+}
+
+.tobacco-modal-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px var(--yuki-transparent)
+}
+
+.tobacco-modal-details p,
+.tobacco-modal-description p,
+.tobacco-modal-notes p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 10px
+}
+
+.tobacco-modal-details strong,
+.tobacco-modal-profile strong,
+.tobacco-modal-notes strong {
+    font-weight: 600;
+    margin-right: 5px
+}
+
+.tobacco-modal-profile {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--yuki-accent-color)
+}
+
+.tobacco-modal-profile h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--yuki-headings-color)
+}
+
+.tobacco-modal-profile .profile-ratings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px
+}
+
+.tobacco-modal-profile .profile-rating {
+    border-left: 3px solid var(--yuki-primary-color);
+    padding-left: 10px;
+    font-size: 14px
+}
+
+.tobacco-modal-description,
+.tobacco-modal-notes {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--yuki-accent-color)
+}
+
+.tobacco-modal-description h3,
+.tobacco-modal-notes h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--yuki-headings-color)
+}
+
+.tobacco-modal-rating-breakdown {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--yuki-accent-color)
+}
+
+.tobacco-modal-rating-breakdown h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--yuki-headings-color)
+}
+
+.tobacco-modal-rating-breakdown .rating-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.tobacco-modal-rating-breakdown .rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.tobacco-modal-rating-breakdown .rating-label {
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 60px
+}
+
+.tobacco-modal-rating-breakdown .rating-visual {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1
+}
+
+.tobacco-modal-rating-breakdown .rating-bar-bg {
+    flex: 1;
+    height: 8px;
+    background-color: var(--yuki-accent-color);
+    border-radius: 4px;
+    overflow: hidden
+}
+
+.tobacco-modal-rating-breakdown .rating-bar-fill {
+    height: 100%;
+    background-color: var(--yuki-primary-color);
+    border-radius: 4px;
+    transition: width 0.3s ease
+}
+
+.tobacco-modal-rating-breakdown .rating-count {
+    font-size: 12px;
+    font-weight: 600;
+    min-width: 20px;
+    text-align: right
+}
+
+@media (max-width:768px) {
+    .tobacco-modal-content {
+        width: 95%;
+        padding: 15px
+    }
+    .tobacco-modal-title {
+        font-size: 20px
+    }
+    .tobacco-modal-title .brand-name {
+        font-size: 14px
+    }
+    .tobacco-modal-main {
+        grid-template-columns: 1fr;
+        gap: 20px
+    }
+    .tobacco-modal-profile .profile-ratings {
+        grid-template-columns: 1fr
+    }
+}

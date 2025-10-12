@@ -1,0 +1,252 @@
+/**
+ * Editor styles for the tobacco blend block
+ */
+
+.tobacco-blend-block {
+    display: block;
+    width: 100%;
+    transition: all ease 0.25s;
+    border-radius: 2px;
+    border-top: var(--yuki-form-border-top);
+    border-right: var(--yuki-form-border-right);
+    border-bottom: var(--yuki-form-border-bottom);
+    border-left: var(--yuki-form-border-left);
+    background: var(--yuki-form-background-color);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.tobacco-blend-header {
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.tobacco-blend-title {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.brand-name {
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 5px;
+    opacity: 0.7;
+}
+
+.blend-name {
+    display: block;
+    font-weight: bold;
+}
+
+.tobacco-blend-rating {
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.tobacco-blend-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.tobacco-blend-image {
+    flex: 0 0 200px;
+    order: 2;
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.tobacco-blend-details {
+    flex: 1;
+    order: 1;
+    p {
+        margin: 8px 0;
+        font-size: 14px;
+        line-height: 1.4;
+        strong {
+            margin-right: 8px;
+        }
+    }
+}
+
+.tobacco-blend-profile {
+    display: block;
+    width: 100%;
+    transition: all ease 0.25s;
+    border-radius: 2px;
+    border-top: var(--yuki-form-border-top);
+    border-right: var(--yuki-form-border-right);
+    border-bottom: var(--yuki-form-border-bottom);
+    border-left: var(--yuki-form-border-left);
+    background: var(--yuki-form-background-color);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.profile-ratings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.profile-rating {
+    font-size: 14px;
+    line-height: 1.4;
+    strong {
+        margin-right: 8px;
+    }
+}
+
+.tobacco-blend-description,
+.tobacco-blend-notes {
+    margin-bottom: 20px;
+    p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.6;
+        strong {
+            margin-right: 8px;
+        }
+    }
+}
+
+.tobacco-blend-block h3 {
+    margin-top: 1rem !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 18px;
+}
+
+// Rating breakdown styles for content within description
+.rating-breakdown-section {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 2px;
+    border-top: var(--yuki-form-border-top);
+    border-right: var(--yuki-form-border-right);
+    border-bottom: var(--yuki-form-border-bottom);
+    border-left: var(--yuki-form-border-left);
+    background: var(--yuki-form-background-color);
+    h3 {
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
+        font-size: 18px;
+    }
+    .rating-summary {
+        text-align: center;
+        margin-bottom: 1rem;
+        .average-rating {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .review-count {
+            font-size: 14px;
+            margin-top: 0.5rem;
+        }
+    }
+    .star-breakdown {
+        .star-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            .star-label {
+                min-width: 60px;
+                font-size: 14px;
+            }
+            .rating-bar {
+                display: flex;
+                align-items: center;
+                flex: 1;
+                margin-left: 1rem;
+                .bar-bg {
+                    flex: 1;
+                    height: 10px;
+                    background-color: #EAEAEA;
+                    border-radius: 2px;
+                    position: relative;
+                    .bar-fill {
+                        height: 100%;
+                        background-color: var(--yuki-form-active-color);
+                        border-radius: 2px;
+                        transition: width 0.3s ease;
+                    }
+                }
+                .count {
+                    margin-left: 0.5rem;
+                    font-size: 14px;
+                    min-width: 20px;
+                }
+            }
+        }
+    }
+}
+
+// Rating breakdown section
+.tobacco-blend-block .tobacco-blend-rating-breakdown {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 2px;
+    border-top: var(--yuki-form-border-top);
+    border-right: var(--yuki-form-border-right);
+    border-bottom: var(--yuki-form-border-bottom);
+    border-left: var(--yuki-form-border-left);
+    background: var(--yuki-form-background-color);
+    h3 {
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
+        font-size: 18px;
+    }
+    .rating-breakdown {
+        .rating-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            .rating-label {
+                min-width: 60px;
+                font-size: 14px;
+            }
+            .rating-visual {
+                display: flex;
+                align-items: center;
+                flex: 1;
+                margin-left: 1rem;
+                .rating-bar-bg {
+                    flex: 1;
+                    height: 10px;
+                    background-color: var(--yuki-form-border-top);
+                    border-radius: 2px;
+                    position: relative;
+                    .rating-bar-fill {
+                        height: 100% !important;
+                        background-color: var(--yuki-form-active-color) !important;
+                        border-radius: 2px;
+                        transition: width 0.3s ease;
+                    }
+                }
+                .rating-count {
+                    margin-left: 0.5rem;
+                    font-size: 14px;
+                    min-width: 20px;
+                }
+            }
+        }
+    }
+}
+
+// Image preview in editor
+.tobacco-blend-image-preview {
+    margin-bottom: 15px;
+    img {
+        max-width: 200px;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+}

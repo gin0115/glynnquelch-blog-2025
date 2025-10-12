@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "tobacco-archive/tobacco-query",
+  "version": "1.0.0",
+  "title": "Tobacco Reviews Query",
+  "category": "widgets",
+  "icon": "search",
+  "description": "Display and filter tobacco reviews in a responsive grid.",
+  "supports": {
+    "html": false,
+    "align": true
+  },
+  "textdomain": "tobacco-archive",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "showFilters": {
+      "type": "boolean",
+      "default": true
+    },
+    "itemsPerPage": {
+      "type": "number",
+      "default": 12
+    },
+    "showPagination": {
+      "type": "boolean",
+      "default": true
+    },
+    "gridColumns": {
+      "type": "number",
+      "default": 3
+    },
+    "showRatings": {
+      "type": "boolean",
+      "default": true
+    },
+    "showProfile": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

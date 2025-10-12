@@ -1,0 +1,123 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "tobacco-archive/tobacco-blend",
+  "version": "1.0.0",
+  "title": "Tobacco Blend",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Display tobacco blend information with ratings, descriptions, and details.",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "tobacco-archive",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "brandName": {
+      "type": "string",
+      "default": ""
+    },
+    "blendName": {
+      "type": "string",
+      "default": ""
+    },
+    "overallRating": {
+      "type": "number",
+      "default": 0
+    },
+    "totalReviews": {
+      "type": "number",
+      "default": 0
+    },
+    "star4Count": {
+      "type": "number",
+      "default": 0
+    },
+    "star3Count": {
+      "type": "number",
+      "default": 0
+    },
+    "star2Count": {
+      "type": "number",
+      "default": 0
+    },
+    "star1Count": {
+      "type": "number",
+      "default": 0
+    },
+    "series": {
+      "type": "string",
+      "default": ""
+    },
+    "blendedBy": {
+      "type": "string",
+      "default": "Glynn Quelch"
+    },
+    "manufacturedBy": {
+      "type": "string",
+      "default": "GQ Tobaccos"
+    },
+    "blendType": {
+      "type": "string",
+      "default": ""
+    },
+    "contents": {
+      "type": "string",
+      "default": ""
+    },
+    "flavoring": {
+      "type": "string",
+      "default": ""
+    },
+    "cut": {
+      "type": "string",
+      "default": ""
+    },
+    "country": {
+      "type": "string",
+      "default": ""
+    },
+    "productionStatus": {
+      "type": "string",
+      "default": "No longer in production"
+    },
+    "strength": {
+      "type": "string",
+      "default": ""
+    },
+    "flavoringRating": {
+      "type": "string",
+      "default": ""
+    },
+    "roomNote": {
+      "type": "string",
+      "default": ""
+    },
+    "taste": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "notes": {
+      "type": "string",
+      "default": ""
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageId": {
+      "type": "number",
+      "default": 0
+    }
+  }
+}

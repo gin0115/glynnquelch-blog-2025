@@ -1,0 +1,165 @@
+// Tobacco Query Block - Editor Styles
+.tobacco-query-block {
+    padding: 1rem;
+    border-radius: 2px;
+    border-top: var(--yuki-form-border-top);
+    border-right: var(--yuki-form-border-right);
+    border-bottom: var(--yuki-form-border-bottom);
+    border-left: var(--yuki-form-border-left);
+    background: var(--yuki-form-background-color);
+    .tobacco-query-loading {
+        text-align: center;
+        padding: 2rem;
+        font-style: italic;
+        color: var(--yuki-form-text-color, inherit);
+    }
+    // Filter Section
+    .tobacco-query-filters {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-radius: 2px;
+        border-top: var(--yuki-form-border-top);
+        border-right: var(--yuki-form-border-right);
+        border-bottom: var(--yuki-form-border-bottom);
+        border-left: var(--yuki-form-border-left);
+        background: var(--yuki-form-background-color);
+        h3 {
+            margin-top: 0 !important;
+            margin-bottom: 1rem !important;
+            font-size: 18px;
+            border-bottom: 2px solid var(--yuki-form-active-color);
+            padding-bottom: 8px;
+        }
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+            .components-base-control {
+                margin-bottom: 0;
+            }
+            .components-base-control__label {
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                display: block;
+            }
+        }
+        .filter-results {
+            font-size: 14px;
+            color: var(--yuki-form-text-color, inherit);
+            font-style: italic;
+        }
+    }
+    // Grid Layout
+    .tobacco-query-grid {
+        display: grid;
+        grid-template-columns: repeat(var(--grid-columns, 3), 1fr);
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    // Individual Tobacco Item
+    .tobacco-query-item {
+        padding: 1rem;
+        border-radius: 2px;
+        border-top: var(--yuki-form-border-top);
+        border-right: var(--yuki-form-border-right);
+        border-bottom: var(--yuki-form-border-bottom);
+        border-left: var(--yuki-form-border-left);
+        background: var(--yuki-form-background-color);
+        transition: all 0.3s ease;
+        &:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .tobacco-item-header {
+            margin-bottom: 1rem;
+            .tobacco-item-title {
+                margin: 0 0 0.5rem 0;
+                font-size: 16px;
+                line-height: 1.3;
+                .brand-name {
+                    font-weight: 600;
+                    display: block;
+                }
+                .blend-name {
+                    font-weight: 400;
+                    opacity: 0.8;
+                }
+            }
+            .tobacco-item-rating {
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--yuki-form-active-color);
+                .review-count {
+                    font-weight: 400;
+                    opacity: 0.7;
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+        .tobacco-item-image {
+            margin-bottom: 1rem;
+            text-align: center;
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 2px;
+                max-height: 150px;
+                object-fit: cover;
+            }
+        }
+        .tobacco-item-details {
+            margin-bottom: 1rem;
+            p {
+                margin: 0.25rem 0;
+                font-size: 14px;
+                line-height: 1.4;
+                strong {
+                    font-weight: 600;
+                }
+            }
+        }
+        .tobacco-item-profile {
+            margin-bottom: 1rem;
+            h5 {
+                margin: 0 0 0.5rem 0;
+                font-size: 14px;
+                font-weight: 600;
+                border-bottom: 1px solid var(--yuki-form-border-top);
+                padding-bottom: 4px;
+            }
+            .profile-ratings {
+                .profile-rating {
+                    font-size: 13px;
+                    margin: 0.25rem 0;
+                    padding-left: 0.5rem;
+                    border-left: 2px solid var(--yuki-form-active-color);
+                    strong {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+        .tobacco-item-description {
+            p {
+                margin: 0;
+                font-size: 13px;
+                line-height: 1.4;
+                opacity: 0.8;
+            }
+        }
+    }
+    // Pagination
+    .tobacco-query-pagination {
+        text-align: center;
+        padding: 1rem;
+        font-style: italic;
+        color: var(--yuki-form-text-color, inherit);
+    }
+}
