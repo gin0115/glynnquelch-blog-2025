@@ -1,0 +1,3953 @@
+@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp");
+
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
+
+/*add review gif*/
+#frmCreateReview
+  > div.divFormButtonWrapper.divActionWrapperReviewAdd.divSubmitCancelReview
+  > img {
+  width: 90px;
+  height: 90px;
+}
+
+/*.imgLoadingGif {
+  display: inline-block;
+
+}*/
+
+*/
+/*--------------------------------------------------------------
+# General Settings
+--------------------------------------------------------------*/
+
+/*---- 
+## Navigation
+----*/
+
+.divBannerDropdownWrapper {
+  position: relative;
+}
+
+.divUserProfileLinkDropDown {
+  display: none;
+  position: absolute;
+  /*right: 40px !important;
+left: auto !important;*/
+  border-radius: 0px 0px 8px 8px;
+  border-top: 4px solid var(--gold, #a88c5c);
+  padding: 15px 25px;
+  background: var(--white, #fff);
+  box-shadow: 0px 4px 24px 12px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+}
+
+.divUserProfileLinkDropDown a {
+  display: block;
+  color: var(--slate, #5172a3);
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2;
+}
+
+/*profile*/
+img.imgUserMainNavAvatar {
+  border: 1.5px solid #a88c5c;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+/*---- 
+## Page Background Color 
+----*/
+/*#fl-post-614>div>div*/
+.fl-page-content,
+footer.fl-builder-content {
+  background: #fafafa !important;
+}
+
+/*--- 
+## Fonts ----*/
+.fl-page-content p {
+  font-family: Rubik;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
+  color: #260f09;
+}
+
+/*---- 
+## Headings 
+----*/
+
+.fl-page-content h1 {
+  color: #260f09;
+  font-family: Playfair Display;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.3;
+}
+/* H2 */
+.fl-page-content h2 {
+  margin: 0;
+  padding: 18px 0;
+  font-family: Rubik;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 600;
+  font-style: normal;
+  color: #260f09;
+}
+
+/* Custom Class: H2 small */
+.h2small h2 {
+  font-family: Rubik;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 600;
+  font-style: normal;
+  color: #260f09;
+}
+
+/* H3 */
+.fl-page-content h3 {
+  font-family: Playfair Display;
+  font-size: 26px;
+  line-height: 1.5;
+  font-weight: 700;
+  font-style: normal;
+  color: #260f09;
+}
+
+/* H4 */
+.fl-page-content h4,
+.tobacco-row h2 {
+  font-family: Rubik;
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 600;
+  font-style: normal;
+  color: #260f09;
+}
+
+/* H5 */
+.fl-page-content h5 {
+  font-family: Rubik;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+  font-style: normal;
+  color: #260f09;
+}
+
+/*---- 
+## Links 
+----*/
+
+/* Regular Links */
+.fl-page-content a {
+  font-family: Rubik;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 1px;
+  color: #5172a3;
+}
+
+.fl-page-content a:hover {
+  font-weight: 600;
+  text-decoration: underline;
+  color: #2b4975;
+}
+
+/* link with > after */
+a.aSimpleLink:after {
+  display: inline-block !important;
+  vertical-align: middle;
+  margin-left: 0.5rem !important;
+  font-family: "Material Icons";
+  font-size: 16px;
+  content: "\e5e1";
+}
+
+/*---- 
+##
+Buttons 
+----*/
+
+/*
+### Primary Button Slate 
+### REMOVED BY RYAN .fl-page-content button,
+*/
+button.btn.btn-outline-dark,
+button.btnSubmit,
+button.btn.btn-primary.btnTR.btnTRPrimary.btnSearch,
+button.btnSubmit.btnSubmitReview,
+.btn-primary,
+.primary-button,
+.btn-primary button,
+.btn-outline-dark,
+.btn {
+  height: 64px;
+  padding: 12px 16px;
+  align-items: center;
+  border: 2px solid #5172a3;
+  border-radius: 8px;
+  background: #5172a3;
+  font-size: 16px;
+  font-weight: 500 !important;
+  text-align: center !important;
+  color: #fff;
+}
+
+button.btn.btn-outline-dark:hover,
+button.btnSubmit,
+:hover button.btnSubmit.btnSubmitReview:hover,
+.primary-button:hover,
+.btn-outline-dark button:hover,
+.btn button:hover,
+.btn-primary:hover,
+.btn-primary button:hover {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transition: color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  border: 2px solid #5172a3;
+  border-radius: 8px;
+  background: #2b4975 !important;
+  color: #fff !important;
+}
+
+.btnSearch {
+  width: 140px;
+  text-align: center;
+}
+
+/* 
+### Secondary Button Slate 
+*/
+
+.secondary-button a,
+.btn-secondary a,
+a.btn-secondary {
+  height: 64px;
+  border: 2px solid #5172a3;
+  border-radius: 8px;
+  padding: 12px 16px;
+  background: white !important;
+  font-family: Rubik;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  color: #5172a3 !important;
+}
+
+.secondary-button a:hover,
+.btn-secondary a:hover,
+a.btn-secondary:hover {
+  border-radius: 8px;
+  background: #2b4975 !important;
+  color: white !important;
+  text-decoration: none;
+}
+
+/*secondary without fixed height*/
+button.btnViewAReview.btnViewReviewFromBlendDetail,
+button.btnAddAReview.btnAddReviewFromBlendDetail {
+  border: 2px solid #5172a3;
+  border-radius: 8px;
+  padding: 12px 16px;
+  background: white !important;
+  font-family: Rubik;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  color: #5172a3 !important;
+}
+
+button.btnViewAReview.btnViewReviewFromBlendDetail:hover,
+button.btnAddAReview.btnAddReviewFromBlendDetail:hover {
+  border-radius: 8px;
+  background: #2b4975 !important;
+  color: white !important;
+  text-decoration: none;
+}
+
+/* 
+### Secondary Button Slate 80% width
+*/
+
+a.btn-secondary80,
+div.btn-secondary80 a {
+  display: block;
+  margin: auto;
+  border: 2px solid #5172a3;
+  border-radius: 8px;
+  width: 80%;
+  padding: 14px 28px;
+  background: white !important;
+  font-family: Rubik;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  color: #5172a3 !important;
+}
+
+a.btn-secondary80:hover {
+  border-radius: 8px;
+  background: #2b4975 !important;
+  text-decoration: none;
+  color: white !important;
+}
+
+/* 
+### Secondary Button Small Height Slate
+ */
+.secondary-sm-button a {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #5172a3;
+  border-radius: 8px;
+  height: 40px;
+  padding: 12px 16px;
+  background: white !important;
+  font-family: Rubik;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  color: #5172a3 !important;
+}
+
+.secondary-sm-button a:hover {
+  border-radius: 8px;
+  background: #2b4975 !important;
+  text-decoration-line: none;
+  color: white !important;
+}
+
+/* 
+Disable Button 
+*/
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+a.anchCancelLink,
+a.anchAddNewBlend {
+  font-size: 14px;
+  font-weight: 500 !important;
+  margin-left: 20px;
+}
+
+/*---- 
+## Pagination
+----*/
+div.fl-builder-pagination,
+div.divPagionationWrapper {
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.divPagionationWrapper > ul,
+div.fl-builder-pagination ul.page-numbers {
+  /* background: lightcoral;*/
+  padding: 8px;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 16px;
+  line-height: normal;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #260f09;
+}
+
+.pagination a.current {
+  border-bottom: 4px solid #5172a3;
+}
+
+.fl-builder-pagination li a.page-numbers:hover {
+  background: rgba(81, 114, 163, 0.06);
+}
+
+.fl-builder-pagination li span.current {
+  background: white;
+  border-bottom: 4px solid #5172a3 !important;
+}
+
+.pagination a:hover,
+.fl-builder-pagination li a.page-numbers:hover {
+  background: rgba(81, 114, 163, 0.06);
+  text-decoration: none !important;
+  font-weight: 600;
+  color: #2b4975 !important;
+}
+
+.pagination a,
+.fl-builder-pagination li a.page-numbers {
+  /*background: mintcream;*/
+  padding: 8px;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 16px;
+  line-height: normal;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #260f09;
+}
+
+.fl-builder-pagination li a.page-numbers,
+.fl-builder-pagination li span.page-numbers {
+  border: none;
+}
+
+.pagination .ellipsis {
+  padding: 8px;
+  font-family: Rubik;
+  font-size: 16px;
+  line-height: normal;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1.6px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #260f09;
+}
+
+/*--------------------------------------------------------------
+# Table Styling
+--------------------------------------------------------------*/
+
+/*----
+## Table
+---- */
+
+table.table.table-responsive {
+  display: table;
+  width: 100%;
+}
+
+table {
+  margin-bottom: 28px !important;
+}
+
+/*----
+## Table Header
+---- */
+thead tr {
+  height: 64px;
+  background-color: #5172a326 !important;
+  font-family: Rubik;
+  font-size: 18px;
+  /*line-height: 1.5;*/
+  font-weight: 600;
+  font-style: normal;
+  color: #260f09;
+}
+
+/*table row table cells*/
+/*backwards way to get the radius */
+tr th:first-child {
+  border-top-left-radius: 20px;
+}
+
+tr th:last-child {
+  border-top-right-radius: 20px;
+}
+
+.table > tbody > tr > th {
+  border-top: none !important;
+}
+
+th {
+  padding-top: 22px !important;
+  padding-bottom: 22px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.table .thead-dark th,
+.table th {
+  border-color: #eaeaea !important;
+  height: 64px;
+  font-family: Rubik;
+  font-size: clamp(1rem, 0.0556rem + 1.7778vw, 1.5rem);
+
+  line-height: 1.5;
+  font-weight: 600;
+  font-style: normal;
+  color: #260f09 !important;
+  background-color: rgba(81, 114, 163, 0.2) !important;
+}
+
+/*---
+Table Body 
+---- */
+
+div.divTableWrapper.divBlendTableWrapper > table > tbody,
+table > tbody {
+  font-family: Rubik;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* alternating color rows */
+tr:nth-child(odd),
+.table-striped tbody tr:nth-of-type(odd) {
+  background: white !important;
+}
+
+tr:nth-child(even),
+.table-striped tbody tr:nth-of-type(even),
+.thead-dark tbody tr:nth-of-type(even) {
+  border-bottom: 1px solid #eaeaea;
+  background: rgba(81, 114, 163, 0.06);
+}
+
+/*hover*/
+.table tbody tr:nth-child(odd):hover,
+.table-striped tbody tr:nth-of-type(odd):hover {
+  background: #eaeaea !important;
+}
+
+/*hover*/
+.table tbody tr:nth-child(even):hover,
+.table-striped tbody tr:nth-of-type(even):hover,
+.thead-dark tbody tr:nth-of-type(even):hover {
+  background: #eaeaea !important;
+}
+
+/*no hover on header row*/
+.table > thead tr:hover .table > thead tr:nth-child(odd) {
+  background: none !important;
+}
+
+td {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+/*---
+## Table Links
+---- */
+
+tr td a {
+  font-family: Rubik;
+  font-size: 14px;
+  /* line-height: 1.5;*/
+  font-weight: 400 !important;
+  font-style: normal;
+  color: #260f09 !important;
+}
+
+tr td a:hover {
+  text-decoration: none !important;
+  font-weight: 400 !important;
+}
+
+tr td:first-child a {
+  font-family: Rubik;
+  font-size: 14px;
+  font-weight: 600 !important;
+  font-style: normal;
+  /*line-height: 1.5;*/
+  color: #5172a3 !important;
+}
+
+tr td:first-child a:hover {
+  font-weight: 600 !important;
+}
+
+.table-responsive {
+  border: none !important;
+}
+
+/*---
+## Table Responsive
+---- */
+
+@media (max-width: 600px) {
+  /*table*/
+  /* .fl-page-content table {
+    
+  }*/
+
+  /* .brandTableHeader {
+   
+  }*/
+
+  /*body*/
+  .table > tbody > tr > td {
+    border-top: none !important;
+  }
+
+  /*Rows*/
+  tr.trTableRow td::before {
+    padding-right: 10px;
+  }
+
+  /*Cell*/
+  td {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  td:first-child {
+    padding-top: 16px !important;
+    padding-bottom: 0px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  td:last-child {
+    padding-top: 0px !important;
+    padding-bottom: 16px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /*.brandTableRows*/
+  .trTableRow {
+    border-bottom: 1px solid #eaeaea;
+    background: rgba(81, 114, 163, 0.06) !important;
+  }
+
+  /*.aBrandDetail {
+   
+  }*/
+
+  div.divTableWrapper.divBrandTableWrapper tr > td {
+    border-top: none !important;
+    text-align: left;
+  }
+
+  /*blend table*/
+  /* tr.blend.trTableRow.homepageBlendTableRows {
+  }*/
+
+  div.divRecentBlendWrapper td:last-child {
+    padding-top: 0px !important;
+    padding-bottom: 35px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Table Results
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Page Layout 
+--------------------------------------------------------------*/
+/*cheating to remove magnifing glass this for the client review will fix later*/
+#fl-post-327
+  > div
+  > div
+  > div.fl-row.fl-row-full-width.fl-row-bg-photo.fl-node-u3ty5j8km1zb.fl-row-custom-height.fl-row-align-center
+  > div
+  > div
+  > div
+  > div
+  > div
+  > div.fl-module.fl-module-rich-text.fl-node-jdfhu4g9m5sy
+  > div
+  > div
+  > div
+  > form
+  > div
+  > i {
+  display: none;
+}
+
+/*---- 
+##Rows
+----*/
+/*
+.tobacco-row {
+}*/
+
+/*----
+## Columns Main
+----*/
+.tobacco-left {
+  margin-top: 28px;
+}
+
+.tobacco-right {
+  margin-top: 28px;
+}
+
+/*----
+## Modules
+---- */
+
+/*----
+### Single Module
+---- */
+.tobacco-single {
+  margin-top: 0px;
+  margin-bottom: 14px;
+  padding: 10px 28px 28px 28px;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  background: white;
+}
+
+.tobacco-single-dark {
+  margin-top: 0px;
+  margin-bottom: 14px;
+  padding: 10px 28px 28px 28px;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  background: #260f09;
+}
+
+/*used to fi new review form*/
+.tobacco-single-min-height {
+  margin-top: 0px;
+  margin-bottom: 14px;
+  padding: 10px 28px 28px 28px;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  background: white;
+  min-height: 1000px;
+}
+
+/*---- 
+## Children Columns (with left and right columns side by side)
+----*/
+/* children column
+ * Margin and padding done in text editor 
+ * */
+.subcol-left,
+.subcol-right {
+  /*color: #260F09;
+  font-size: 14px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+	align-items: center;
+  justify-content: center;
+	background: yellow;
+	 border-radius: 8px;
+  border: 1px solid #eaeaea;
+   background: yellow;*/
+  margin-bottom: 14px;
+}
+
+/*----
+## Modules stacked in column 
+---- */
+
+/*add to module with left and right columns side by side */
+.mod-right {
+  flex: 1 auto;
+  margin-left: 14px;
+}
+
+.mod-left {
+  flex: 1 auto;
+  margin-right: 14px;
+}
+
+.mod-left-1 {
+  width: 30%;
+  margin-right: 1.5% !important;
+}
+
+.mod-middle-2 {
+  width: 30%;
+  margin-right: 1.5% !important;
+  margin-left: 1.5% !important;
+}
+
+.mod-right-3 {
+  width: 30%;
+  margin-left: 1.5% !important;
+}
+
+@media (max-width: 770px) {
+  .mod-left-1 {
+    width: 100%;
+    margin-right: 14px !important;
+    margin-left: 14px !important;
+  }
+
+  .mod-middle-2 {
+    width: 100%;
+    margin-right: 14px !important;
+    margin-left: 14px !important;
+  }
+
+  .mod-right-3 {
+    width: 100%;
+    margin-right: 14px !important;
+    margin-left: 14px !important;
+  }
+}
+
+/*add to get border and spacing around stacked modules in column*/
+
+.mod-top {
+  margin-top: 14px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-color: #eaeaea;
+  border-style: solid;
+  border-width: 1px 1px 0px 1px;
+  background: white;
+  padding: 10px 28px 0px 28px;
+}
+
+.mod-middle {
+  padding: 0px 28px 0px 28px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-color: #eaeaea;
+  border-style: solid;
+  border-width: 0px 1px 0px 1px;
+  background: white;
+}
+
+.mod-bottom {
+  margin-bottom: 14px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-color: #eaeaea;
+  border-style: solid;
+  border-width: 0px 1px 1px 1px;
+  padding: 0px 28px 20px 28px;
+  background: white;
+}
+
+/*--------------------------------------------------------------
+## Ads Right Column 
+--------------------------------------------------------------*/
+.adsroll-col {
+  margin-left: 0px;
+}
+
+.adroll-item {
+  margin-bottom: 28px;
+  margin-left: 28px;
+  /*padding: 0px;*/
+}
+
+/*--------------------------------------------------------------
+## Page Layout Mobile
+--------------------------------------------------------------*/
+
+@media (max-width: 990px) {
+  .tobacco-single,
+  .tobacco-single-dark {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .mod-right {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .fl-builder .subcol-left {
+    margin: 0;
+    max-width: none;
+    width: auto;
+    padding: 0;
+  }
+
+  .fl-builder .subcol-right {
+    margin: 0;
+    max-width: none;
+    width: auto;
+    padding: 0;
+  }
+
+  .mod-left {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+}
+
+@media (max-width: 770px) {
+  .adsroll-col {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .adroll-item {
+    margin-bottom: 28px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .ads-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/*--------------------------------------------------------------
+# Home Page 
+--------------------------------------------------------------*/
+/*search*/
+#blendSearchInput {
+  color: #808080;
+}
+
+/*----
+## Homepage Table
+---- */
+
+.divRecentBlendWrapper td:nth-child(1),
+.divRecentBlendWrapper th:nth-child(1) {
+  width: 40%;
+}
+
+.divRecentBlendWrapper td:nth-child(2),
+.divRecentBlendWrapper th:nth-child(2) {
+  width: 30%;
+}
+
+.divRecentBlendWrapper td:nth-child(3),
+.divRecentBlendWrapper th:nth-child(3) {
+  width: auto;
+}
+
+@media (max-width: 600px) {
+  .divRecentBlendWrapper td:nth-child(1),
+  .divRecentBlendWrapper th:nth-child(1) {
+    width: 100%;
+  }
+
+  .divRecentBlendWrapper td:nth-child(2),
+  .divRecentBlendWrapper th:nth-child(2) {
+    width: 100%;
+  }
+
+  .divRecentBlendWrapper td:nth-child(3),
+  .divRecentBlendWrapper th:nth-child(3) {
+    width: 100%;
+  }
+}
+
+/*----
+## Homepage Blog 
+---- */
+.subcol-left div.fl-post-grid-text > h3 > a {
+  font-family: Rubik;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 600;
+  font-style: normal;
+  color: #260f09 !important;
+}
+
+.subcol-left div.fl-post-grid-text > div.fl-post-grid-meta-terms > div > a {
+  font-family: Rubik;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #a88c5c !important;
+}
+
+.subcol-left div.fl-post-grid-text {
+  font-family: Rubik;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 400;
+  font-style: normal;
+  color: #260f09;
+}
+
+/*--------------------------------------------------------------
+## Fresh from blog 
+Use on the homepage but styled that it might be global
+--------------------------------------------------------------*/
+div.fl-post-grid-terms a {
+  font-family: Rubik;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+  font-style: normal;
+  color: #a88c5c;
+}
+
+h3.fl-post-grid-title a {
+  font-family: Rubik;
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+  color: #000;
+}
+
+div.fl-post-grid-content {
+  font-family: Rubik;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+  font-style: normal;
+  color: #260f09;
+  margin-top: 12px;
+}
+
+/*--------------------------------------------------------------
+## Blog Homepage Reviews
+--------------------------------------------------------------*/
+/*parent*/
+div.divRecentReviewedWrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 24px;
+}
+
+/*column item*/
+div.divReviewShowcase {
+  /*background: purple;*/
+  flex-grow: 1;
+  flex-basis: 25%;
+  padding: 0px;
+}
+
+div.divReviewImageWrapper {
+  display: flex;
+  /*align-items: center;
+	border: 1px solid#EAEAEA;
+	border-radius: 8px;
+	height: 234px;
+	background: #fff;*/
+}
+
+img.imgReviewImage {
+  /*width: 100%;*/
+  width: 234px;
+  /* width of container */
+  height: 234px !important;
+  /* height of container */
+  object-fit: cover;
+  object-position: 50% 50%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  border: 1px solid#EAEAEA;
+  border-radius: 8px;
+  /*height: 234px;*/
+  background: #fff;
+}
+
+div.divReviewLabelWrapper {
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+
+span.spanReviewLabel {
+  font-family: Rubik;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+  font-style: normal;
+  color: #a88c5c;
+}
+
+.fl-page-content h3.hLinkToReview {
+  line-height: 1;
+}
+
+.fl-page-content h3.hLinkToReview a {
+  font-family: Rubik;
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+  color: #000;
+}
+
+polygon#star {
+  fill: rgba(168, 140, 92, 1) !important;
+  stroke: rgba(168, 140, 92, 1) !important;
+}
+
+polygon#star-left {
+  fill: rgba(168, 140, 92, 1) !important;
+  stroke: rgba(168, 140, 92, 1) !important;
+}
+
+polygon#star-right {
+  fill: white !important;
+  stroke: rgba(168, 140, 92, 1) !important;
+}
+
+div.divReviewStarWrapper {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+div.divReviewStarWrapper svg {
+  height: 2em !important;
+  width: 2em !important;
+}
+
+/*
+div.divReviewUserLinkWrapper {
+}*/
+
+a.aLinkToUser {
+  font-family: Rubik;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 600;
+  font-style: normal;
+  color: #000;
+}
+
+div.divRelativeTimeWrapper {
+  font-family: Rubik;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-style: normal;
+  color: #000;
+}
+
+@media (max-width: 900px) {
+  div.divRecentReviewedWrapper {
+    flex-direction: column;
+  }
+
+  div.divReviewShowcase {
+    padding-bottom: 28px;
+  }
+
+  div.divReviewImageWrapper {
+    height: 260px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Brand Page
+--------------------------------------------------------------*/
+/*---- 
+## Didn't Find It? 
+----*/
+/* column setting*/
+
+.findit {
+  /*margin-top: 14px;
+	border: 1px solid #eaeaea;
+	border-radius: 8px;*/
+  padding: 18px 8px 8px 8px;
+  /*background: white;*/
+  font-family: Rubik;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  color: #260f09;
+}
+
+.findit a {
+  margin-left: 28px;
+}
+
+@media (max-width: 575px) {
+  .findit a {
+    margin-left: 8px;
+    margin-top: 12px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Brand Details Page
+--------------------------------------------------------------*/
+
+/* 
+## No Brand Results 
+*/
+.divBrandNoResults {
+  padding-top: 18px;
+  font-family: Rubik;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
+  color: #260f09;
+}
+
+/* 
+## Brand Page Warpper 
+*/
+
+.divBrandDetailPageWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.divBrandDetailPageWrapper .container.mt-5 {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+}
+
+.divBrandDetailPageWrapper .row {
+  flex: 0 0 100%;
+}
+
+.divBrandDetailPageWrapper .col-lg-8 {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+/*table*/
+/*brand*/
+.brandDetailTableRows td:nth-child(1) {
+  width: 50%;
+}
+
+.brandDetailTableRows td:nth-child(2) {
+  width: 10%;
+}
+
+.brandDetailTableRows td:nth-child(3) {
+  width: 25%;
+}
+
+.brandDetailTableRows td:nth-child(4) {
+  width: 5%;
+}
+
+.brandDetailTableRows td:nth-child(5) {
+  width: 15%;
+}
+
+@media (max-width: 600px) {
+  .brandDetailTableRows td:nth-child(1),
+  .brandDetailTableRows td:nth-child(2),
+  .brandDetailTableRows td:nth-child(3),
+  .brandDetailTableRows td:nth-child(4),
+  .brandDetailTableRows td:nth-child(5) {
+    width: 100%;
+  }
+}
+/*ratings column in table results*/
+a > span.spanDoubleDataColumn.spanDoubleDataColumnLeft {
+  display: block;
+}
+
+a > span.spanDoubleDataColumn.spanDoubleDataColumnRight {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  a > span.spanDoubleDataColumn.spanDoubleDataColumnLeft,
+  a > span.spanDoubleDataColumn.spanDoubleDataColumnRight {
+    display: inline-block;
+  }
+}
+
+/* 
+## Brand Page Top Section Columns 
+*/
+/*brand left column: # Blends*/
+div.divBrandDetailPageWrapper.divBrandDetailPageMeta td:nth-child(1),
+div.divBrandDetailPageWrapper.divBrandDetailPageMeta th:nth-child(1) {
+  width: 30%;
+  background: white;
+}
+
+.divBrandMetaTDWrapperLeft {
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  background: white;
+  padding: 50px;
+}
+
+a#filter-reset.anchShowAllBlendsBrand {
+  color: #a88c5c !important;
+  font-family: Rubik;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+div.divBrandDetailTotals.divBrandDetailTotalsReviews {
+  color: #666;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+/*brand right column: Aug Ratings*/
+div.divBrandDetailPageWrapper.divBrandDetailPageMeta td:nth-child(2),
+div.divBrandDetailPageWrapper.divBrandDetailPageMeta th:nth-child(2) {
+  width: auto;
+  vertical-align: middle;
+}
+
+@media (max-width: 1300px) {
+  /*brand*/
+  div.divBrandDetailPageWrapper.divBrandDetailPageMeta td:nth-child(1),
+  div.divBrandDetailPageWrapper.divBrandDetailPageMeta th:nth-child(1) {
+    background: white;
+    width: 40%;
+  }
+
+  div.divBrandDetailPageWrapper.divBrandDetailPageMeta td:nth-child(2),
+  div.divBrandDetailPageWrapper.divBrandDetailPageMeta th:nth-child(2) {
+    width: 60%;
+  }
+}
+
+@media (max-width: 769px) {
+  div.divBrandDetailPageWrapper.divBrandDetailPageMeta td:nth-child(1),
+  div.divBrandDetailPageWrapper.divBrandDetailPageMeta th:nth-child(1) {
+    background: white;
+    width: 100%;
+    display: block;
+  }
+
+  div.divBrandDetailPageWrapper.divBrandDetailPageMeta td:nth-child(2),
+  div.divBrandDetailPageWrapper.divBrandDetailPageMeta th:nth-child(2) {
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+  }
+
+  /*remove brands:*/
+  div.divBrandDetailPageWrapper.divBrandDetailPageMeta td:nth-of-type(1):before,
+  div.divBrandDetailPageWrapper.divBrandDetailPageMeta
+    td:nth-of-type(2):before {
+    display: none;
+  }
+}
+
+/* 
+## Blend Details Page Avg Rating Columns 
+*/
+
+div.divBlendDetailRow.divBlendDetailRatingsSection tr:nth-child(even),
+div.divBlendDetailRow.divBlendDetailRatingsSection
+  .table-striped
+  tbody
+  tr:nth-of-type(even),
+div.divBlendDetailRow.divBlendDetailRatingsSection
+  .thead-dark
+  tbody
+  tr:nth-of-type(even) {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+div.divBlendDetailRow.divBlendDetailRatingsSection
+  > table
+  > tbody
+  > tr.trBlendRatingCountRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/*Blends left column: Ratings*/
+div.divBlendDetailRow.divBlendDetailRatingsSection td:nth-child(1),
+div.divBlendDetailRow.divBlendDetailRatingsSection th:nth-child(1) {
+  flex-basis: 30%;
+  border-top: none !important;
+}
+
+/*avg rating blend page*/
+.divMeanRatingAverageWrapper {
+  color: var(--medium-gray, #eaeaea);
+  font-family: Rubik;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+
+.spanReviewAverage {
+  color: #a88c5c;
+  font-family: Rubik;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.divAverateRatingReviewCountExists {
+  color: #666;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+/*.divBlendMetaTDWrapperLeft*/
+.divAverageRatingLeftSide {
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  padding: 50px;
+}
+
+/*Blends right column: Star Ratings*/
+div.divBlendDetailRow.divBlendDetailRatingsSection td:nth-child(2),
+div.divBlendDetailRow.divBlendDetailRatingsSection th:nth-child(2) {
+  flex-basis: 70% !important;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-top: none !important;
+}
+
+@media (max-width: 1300px) {
+  /*blend*/
+  div.divBlendDetailRow.divBlendDetailRatingsSection td:nth-child(1),
+  div.divBlendDetailRow.divBlendDetailRatingsSection th:nth-child(1) {
+    width: 100%;
+  }
+
+  div.divBlendDetailRow.divBlendDetailRatingsSection td:nth-child(2),
+  div.divBlendDetailRow.divBlendDetailRatingsSection th:nth-child(2) {
+    width: 100%;
+  }
+
+  /*removes brand and blends before avg rating*/
+  div.divBlendDetailRow.divBlendDetailRatingsSection td:nth-child(1):before {
+    display: none;
+  }
+
+  div.divBlendDetailRow.divBlendDetailRatingsSection td:nth-child(2):before {
+    display: none;
+  }
+}
+
+@media (max-width: 769px) {
+  div.divBlendDetailRow.divBlendDetailRatingsSection
+    > table
+    > tbody
+    > tr.trBlendRatingCountRow {
+    display: flex;
+    flex-direction: column;
+  }
+
+  tr.trBlendRatingHeaderRow {
+    display: none;
+  }
+}
+
+/* 
+## Star Rating Bar Graph -stars ratings on blends and brand details page
+*/
+.divAverageRatingStarWrapper,
+.divStarBarWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* # on blends and brand detail*/
+.col.divStarLabelWrapper,
+.divStarLabelWrapper {
+  flex-basis: 15%;
+}
+
+.col.divStarLabelWrapper a,
+a.anchClickToFilterReviews {
+  color: #000;
+  font-family: Rubik;
+  font-size: 18px !important;
+  font-style: normal;
+  font-weight: 600 !important;
+  line-height: 24px;
+}
+
+/*rating bar on blends and brand detail*/
+.col.divStarBarWrapper,
+.divReviewGraphWrapper {
+  flex-basis: 75%;
+}
+
+div.rating_container_bar,
+.divEntireRatingBarWrapper {
+  height: 24px !important;
+  width: 100% !important;
+  border-radius: 4px;
+  background: #eaeaea !important;
+  margin-bottom: 8px;
+}
+
+.rating_filled_bar {
+  height: 24px !important;
+  border-radius: 4px 0px 0px 4px;
+  background: #a88c5c !important;
+}
+
+/*amount of reviews for rating bar on blends and brand detail*/
+.col.divStarCountWrapper,
+.divReviewGraphCount {
+  color: #000;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  flex-basis: 10%;
+}
+
+@media (max-width: 1300px) {
+  .col.divStarLabelWrapper,
+  .divStarLabelWrapper {
+    flex-basis: 20%;
+  }
+
+  .col.divStarBarWrapper,
+  .divReviewGraphWrapper {
+    flex-basis: 65%;
+  }
+
+  .col.divStarCountWrapper,
+  .divReviewGraphCount {
+    color: #000;
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    flex-basis: 15%;
+  }
+}
+
+@media (max-width: 450px) {
+  .col.divStarLabelWrapper,
+  .divStarLabelWrapper {
+    flex-basis: 30%;
+  }
+
+  .col.divStarBarWrapper,
+  .divReviewGraphWrapper {
+    flex-basis: 60%;
+  }
+}
+
+/* 
+## Brand and Blend Page Results Tables
+*/
+
+/*hover*/
+.divBrandDetailPageWrapper .table tbody tr:nth-of-type(odd),
+.divBrandDetailPageWrapper .table-striped tbody tr:nth-of-type(odd),
+div.divBlendDetailRow.divBlendDetailRatingsSection tbody tr:nth-of-type(odd) {
+  background: white !important;
+}
+
+/*hover*/
+.divBrandDetailPageWrapper .table tbody tr:nth-child(even),
+.divBrandDetailPageWrapper .table-striped tbody tr:nth-of-type(even),
+.divBrandDetailPageWrapper .thead-dark tbody tr:nth-of-type(even),
+.divBlendDetailRow.divBlendDetailRatingsSection .table tbody tr:nth-child(even),
+.divBlendDetailRow.divBlendDetailRatingsSection
+  .table-striped
+  tbody
+  tr:nth-of-type(even),
+.divBlendDetailRow.divBlendDetailRatingsSection
+  .thead-dark
+  tbody
+  tr:nth-of-type(even) {
+  background: white;
+}
+
+/*hover*/
+.divBrandDetailPageWrapper .table tbody tr:nth-child(odd):hover,
+.divBrandDetailPageWrapper .table-striped tbody tr:nth-of-type(odd):hover,
+.divBlendDetailRow.divBlendDetailRatingsSection
+  .table
+  tbody
+  tr:nth-child(odd):hover,
+.divBlendDetailRow.divBlendDetailRatingsSection
+  .table-striped
+  tbody
+  tr:nth-of-type(odd):hover {
+  background: none !important;
+}
+
+/*hover*/
+.divBrandDetailPageWrapper .table tbody tr:nth-child(even):hover,
+.divBrandDetailPageWrapper .table-striped tbody tr:nth-of-type(even):hover,
+.divBrandDetailPageWrapper .thead-dark tbody tr:nth-of-type(even):hover,
+.divBlendDetailRow.divBlendDetailRatingsSection
+  .table
+  tbody
+  tr:nth-child(even):hover,
+.divBlendDetailRow.divBlendDetailRatingsSection
+  .table-striped
+  tbody
+  tr:nth-of-type(even):hover,
+.divBlendDetailRow.divBlendDetailRatingsSection
+  .thead-dark
+  tbody
+  tr:nth-of-type(even):hover {
+  background: none !important;
+}
+
+/******************cleaning code erika ****************************/
+
+/*--------------------------------------------------------------
+# Blend Details Page
+--------------------------------------------------------------*/
+/*##Details Section */
+div.row.divBlendDetailRow {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+/*
+div.row.divBlendDetailRow .col {
+
+}
+
+div.row.divBlendDetailRow .col-9 {
+}
+
+div.row.divBlendDetailRow .col-3 {
+
+}
+
+*/
+@media (max-width: 1250px) {
+  /*div.row.divBlendDetailRow .col {
+
+}
+*/
+
+  div.row.divBlendDetailRow .col-9 {
+    -ms-flex: 0 0 66%;
+    flex: 0 0 65%;
+    max-width: 65%;
+  }
+
+  div.row.divBlendDetailRow .col-3 {
+    -ms-flex: 0 0 35%;
+    flex: 0 0 35%;
+    max-width: 35%;
+  }
+}
+@media (max-width: 750px) {
+  /*div.row.divBlendDetailRow .col {
+	
+}
+
+*/
+  div.row.divBlendDetailRow .col-9 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  div.row.divBlendDetailRow .col-3 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/*background for all sections*/
+.divBlendDetailRow {
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  background: #fff;
+  padding: 28px;
+  margin-bottom: 20px;
+  color: #260f09;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/*
+h2.detailBrandName {
+	
+}
+*/
+/*blend title*/
+span.spanBlendDetailBrandTitle {
+  display: block;
+  color: var(--dark-brown, #260f09);
+  font-family: Rubik;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 38px;
+  /* 118.75% */
+}
+
+span.spanBlendDetailBlendTitle {
+  display: block;
+  color: var(--dark-brown, #260f09);
+
+  font-family: Playfair Display;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px;
+  /* 112% */
+}
+
+/*favorite*/
+div.divBlendFavoriteOfWrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/*buttons section*/
+
+.detailButtonRow {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.detailButton {
+  flex: 1;
+}
+
+a .detailButton,
+a .detailButton2 {
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #260f09;
+  border-radius: 10px;
+  height: 45px;
+  padding: 12px 16px;
+
+  color: var(--dark-brown, #260f09);
+  text-align: center;
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  /* 142.857% */
+}
+
+a .detailButton:hover,
+a .detailButton2:hover {
+  background-color: #260f09;
+  border: 2px solid;
+  border-color: #260f09;
+  color: #ffffff;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  /* 142.857% */
+}
+
+@media (max-width: 800px) {
+  div.detailButtonRow {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/*details table*/
+tr.detailRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-self: flex-start;
+  gap: 20px;
+}
+
+td.detailColumn1 {
+  flex-basis: 30%;
+
+  color: #260f09;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+td.detailColumn2 {
+  flex-basis: 70%;
+  color: #260f09;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+@media (max-width: 600px) {
+  tr.detailRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0px;
+  }
+  td.detailColumn1 {
+    flex-basis: 100%;
+    text-align: left;
+  }
+
+  td.detailColumn2 {
+    flex-basis: 100%;
+    text-align: left;
+  }
+}
+
+td.detailColumn2 a {
+  color: #5172a3 !important;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600 !important;
+  line-height: 1.3;
+}
+
+td.detailColumn2 a:hover {
+  font-weight: 600;
+  text-decoration: underline !important;
+  color: #2b4975 !important;
+}
+
+/*profile*/
+.divBlendProfileWrapper {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.col.divIndividualProfile {
+  flex-basis: 0%;
+  flex-grow: 0;
+  flex-shrink: 1;
+  border-radius: 4px;
+  border: 1px solid #eaeaea;
+}
+
+/*
+.divProfileRatingWrapper-1,
+.divProfileRatingWrapper-2,
+.divProfileRatingWrapper-3,
+.divProfileRatingWrapper-4 {
+
+}
+*/
+
+.row.divProfileRatingName {
+  padding-top: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  /*background: yellow;*/
+}
+
+.row.divProfileRatingHigh {
+  padding-left: 12px;
+  padding-right: 12px;
+  /*background: blue;*/
+}
+
+/*.row.divProfileRatingGraphWrapper {
+}*/
+
+.row.divRowProfileLabel {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  /*background: magenta;*/
+}
+
+.divProfileBarRenderWrapper {
+  margin-left: 1px;
+}
+
+/*reviews*/
+
+/*div.divBlendDetailRow.divBlendDetailReviewsRow {
+ 
+}*/
+/*reviews title*/
+.divBlendDetailReviewHeaderWrapper, .divUserDetailReviewHeaderWrapper {
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.divBlendDetailReviewHeaderWrapper div.divSubheaderWrapper, .divUserDetailReviewHeaderWrapper div.divSubheaderWrapper {
+  flex: 2;
+}
+
+.divBlendDetailReviewHeaderWrapper div.detailProfile.divReviewsFilterWrapper, .divUserDetailReviewHeaderWrapper div.detailProfile.divReviewsFilterWrapper {
+  flex: 1;
+}
+
+div.detailProfile.divReviewsFilterWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /*align-items: flex-end;*/
+  justify-content: center;
+
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--dark-gray, #666);
+  padding: 10px;
+
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  color: var(--dark-brown, #260f09);
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+div.divBlendDetailRow.divBlendDetailReviewsRow
+  > div.divBlendDetailReviewHeaderWrapper
+  > div.detailProfile.divReviewsFilterWrapper
+  > label {
+  flex: 1;
+  color: var(--dark-gray, #666);
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 142.857% */
+}
+div.divUserDetailRow.divUserDetailReviewsRow
+  > div.divUserDetailReviewHeaderWrapper
+  > div.detailProfile.divReviewsFilterWrapper
+  > label {
+  flex: 1;
+  color: var(--dark-gray, #666);
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 142.857% */
+}
+
+#filter-review-blend {
+  flex: 1;
+}
+
+div.detailProfile.divReviewsFilterWrapper select {
+  border: 0;
+}
+
+/*div.detailProfile.divReviewsFilterWrapper select:after {
+  padding: 20px;
+  width: 100px;
+  background: yellow;
+}
+*/
+.divAddReviewWrapper {
+  border-radius: 4px;
+  border: 1px solid var(--medium-gray, #eaeaea);
+  background: var(--light-gray, #fafafa);
+  display: flex;
+  flex-direction: row;
+  /*flex-wrap: wrap;*/
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
+
+/*add review*/
+
+div.divAddReviewButtonWrapper.divLoginFirstButtonWrapper {
+  flex-basis: 50%;
+}
+
+.divAddReviewMessage {
+  flex-basis: 70%;
+  color: #260f09;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2;
+  padding: 12px 0px;
+}
+
+.divAddReviewButtonWrapper {
+  flex-basis: 25%;
+}
+
+div.divAddReviewButtonWrapper > a > button {
+  color: #5172a3;
+  background: white;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 0px 12px;
+}
+
+@media (max-width: 1100px) {
+  .divAddReviewMessage {
+    flex-basis: 60%;
+  }
+
+  .divAddReviewButtonWrapper {
+    flex-basis: 30%;
+  }
+}
+
+@media (max-width: 650px) {
+  .divAddReviewWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0px;
+    gap: 0px;
+  }
+
+  .divAddReviewMessage {
+    flex-basis: 100%;
+  }
+
+  .divAddReviewButtonWrapper {
+    flex-basis: 100%;
+  }
+}
+
+/*table*/
+
+.card-body table {
+  margin-bottom: 0px !important;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/*.detailReviewHeader {
+	background-color:  #5172a326 !important;
+
+}*/
+
+/*hover*/
+.divBlendDetailRow.divBlendDetailReviewsRow
+  .table
+  tbody
+  tr:nth-child(odd):hover,
+.divBlendDetailRow.divBlendDetailReviewsRow
+  .table-striped
+  tbody
+  tr:nth-of-type(odd):hover {
+  background: none !important;
+}
+
+/*hover*/
+.divBlendDetailRow.divBlendDetailReviewsRow
+  .table
+  tbody
+  tr:nth-child(even):hover,
+.divBlendDetailRow.divBlendDetailReviewsRow
+  .table-striped
+  tbody
+  tr:nth-of-type(even):hover,
+.divBlendDetailRow.divBlendDetailReviewsRow
+  .thead-dark
+  tbody
+  tr:nth-of-type(even):hover {
+  background: none !important;
+}
+
+/*no hover on header row*/
+.divBlendDetailRow.divBlendDetailReviewsRow
+  .table
+  > thead
+  tr:hover
+  .divBlendDetailRow.divBlendDetailReviewsRow
+  .table
+  > thead
+  tr:nth-child(odd) {
+  background: none !important;
+}
+
+/*div.divBlendDetailRow.divBlendDetailReviewsRow > div.card.mb-2.divIndividualReviewWrapper.divScrollTo.divScrollToReview.divReviewHighlight > div > table > thead > tr:hover {
+	background-color: none !important;
+}*/
+
+/*
+tr.thReview.thReview {
+	
+}*/
+/*
+.trReview.table > tbody  {
+
+	}*/
+.trReview td:nth-child(1),
+tr.trReview th:nth-child(1) {
+  width: 16%;
+}
+
+.trReview td:nth-child(2),
+tr.trReview th:nth-child(2) {
+  width: 15%;
+}
+
+.trReview td:nth-child(3),
+tr.trReview th:nth-child(3) {
+  width: 12%;
+}
+
+.trReview td:nth-child(4),
+tr.trReview th:nth-child(4) {
+  width: 14%;
+}
+
+.trReview td:nth-child(5),
+tr.trReview th:nth-child(5) {
+  width: 14%;
+}
+
+.trReview td:nth-child(6),
+tr.trReview th:nth-child(6) {
+  width: 12%;
+}
+
+.trReview td:nth-child(7),
+tr.trReview th:nth-child(7) {
+  width: auto;
+}
+
+@media (max-width: 1300px) {
+  .table > tbody > tr > td {
+    width: 100%;
+  }
+
+  .trReview td:nth-child(1),
+  tr.trReview th:nth-child(1) {
+    width: auto;
+  }
+
+  .trReview td:nth-child(2),
+  tr.trReview th:nth-child(2) {
+    width: auto;
+  }
+
+  .trReview td:nth-child(3),
+  tr.trReview th:nth-child(3) {
+    width: auto;
+  }
+
+  .trReview td:nth-child(4),
+  tr.trReview th:nth-child(4) {
+    width: auto;
+  }
+
+  .trReview td:nth-child(5),
+  tr.trReview th:nth-child(5) {
+    width: auto;
+  }
+
+  .trReview td:nth-child(6),
+  tr.trReview th:nth-child(6) {
+    width: auto;
+  }
+
+  .trReview td:nth-child(7),
+  tr.trReview th:nth-child(7) {
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .table > tbody > tr > td {
+    width: 100%;
+  }
+
+  .trReview td:nth-child(1),
+  tr.trReview th:nth-child(1) {
+    text-align: left;
+    line-height: 2;
+  }
+
+  .trReview td:nth-child(2) tr.trReview th:nth-child(2) {
+    width: 100%;
+    line-height: 2;
+  }
+
+  .trReview td:nth-child(3),
+  tr.trReview th:nth-child(3) {
+    width: 100%;
+    line-height: 2;
+  }
+
+  .trReview td:nth-child(4),
+  tr.trReview th:nth-child(4) {
+    width: 100%;
+    line-height: 2;
+  }
+
+  .trReview td:nth-child(5),
+  tr.trReview th:nth-child(5) {
+    width: 100%;
+    line-height: 2;
+  }
+
+  .trReview td:nth-child(6),
+  tr.trReview th:nth-child(6) {
+    width: 100%;
+    line-height: 2;
+  }
+
+  .trReview td:nth-child(7),
+  tr.trReview th:nth-child(7) {
+    width: 100%;
+    line-height: 2;
+  }
+
+  .detailDescription {
+    border-top: 1px solid #ddd !important;
+  }
+}
+
+/*user profile link in table*/
+
+div.divReviewUserImg img {
+  /*border-radius: 120px;*/
+  border: 1.5px solid var(--gold, #a88c5c);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+div.divReviewUserImg {
+  display: inline-flex;
+  align-self: center;
+}
+
+div.divReviewUserName {
+  display: inline-flex;
+  align-self: center;
+}
+
+div.divReviewUserName a {
+  color: var(--slate, #5172a3);
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+/*review card*/
+div.card.mb-2 {
+  margin-bottom: 28px !important;
+}
+
+div.card.mb-2.divIndividualReviewWrapper {
+  border: none !important;
+  padding: 0px;
+}
+
+div.card.mb-2.divIndividualReviewWrapper div.card-body {
+  /* border: none !important;*/
+  border-top: none;
+  border-right: 1px solid #eaeaea;
+  border-left: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  border-radius: 20px 20px 8px 8px;
+  padding: 0px;
+  /*background: pink;*/
+}
+
+.detailDescription.divReviewDetailNotesWrapper {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 0px;
+}
+
+/*Additional Review Information*/
+
+.divAdditionalReviewWrapper {
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 28px;
+}
+div.divAdditionalReviewRow {
+  padding-bottom: 8px;
+}
+
+/*.divAdditionalReviewRowPipeUsed {
+
+}
+*/
+.spanReviewAdditionalLabel {
+  color: #260f09;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/*upvote*/
+div.upvote-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  color: #260f09;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+  /*background: yellow;*/
+  /*border-bottom: 1px solid #EAEAEA;*/
+}
+
+div.divUpvoteMessage {
+  flex-grow: 2;
+}
+
+div.divUpvoteButtonWrapper {
+  flex-grow: 2;
+}
+
+.divShareLinkWrapper {
+  flex-grow: 1;
+  margin-left: auto;
+}
+
+/*upvote button*/
+div.divUpvoteButtonWrapper.divUpvoteCanUpvote > button {
+  border-radius: 8px;
+  border: 2px solid #5172a3;
+  background: #fff;
+  color: #5172a3;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 12px 12px;
+  margin-left: 10px;
+}
+
+div.divUpvoteButtonWrapper.divUpvoteCanUpvote > button:hover {
+  background: #5172a3;
+  color: #fff;
+}
+
+/*div.divUpvoteButtonWrapper.divUpvoteAlreadyUpvote.divUpvoteButtonWrapper-Upvoted > button*/
+
+div.divUpvoteButtonWrapper-Upvoted > button {
+  border: 2px solid #5172a3;
+  border-radius: 8px;
+  background: #5172a3;
+  color: #fff;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 12px 12px;
+  margin-left: 10px;
+}
+
+/* 
+### Edit your review 
+*/
+
+div.divReviewPart.divReviewModifyWrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  gap: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-left: 20px;
+  padding-bottom: 28px;
+}
+
+div.divReviewPart.divReviewModifyWrapper a:hover {
+  text-decoration: none;
+}
+
+/*delete review*/
+
+.divDeleteWrapper.divDeleteReviewWrapper {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.divDeleteWrapper.divDeleteReviewWrapper span.spanIconShortCombined {
+  padding: 12px 16px;
+  margin-right: 20px;
+  background: white;
+  border-radius: 8px;
+  border: 2px solid #ca372e;
+  color: #ca372e;
+  text-align: center;
+  width: 150px !important;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span.spanDeleteLong {
+  display: inline-flex;
+  color: #ca372e;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+div.divDeleteWrapper.divDeleteReviewWrapper
+  > a
+  > span.spanIconShortCombined:hover {
+  background: #ca372e;
+  color: white;
+}
+
+/*div > div.divReviewPart.divReviewModifyWrapper > div.divDeleteWrapper.divDeleteReviewWrapper > a > span > span.spanDeleteShort:hover {
+	color: #fff !important;
+}*/
+
+/*edit review*/
+div.divEditWrapper.divEditReviewWrapper {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+span.spanEditLong {
+  display: inline-flex;
+  color: #5172a3;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.divEditWrapper.divEditReviewWrapper span.spanIconShortCombined {
+  padding: 12px 16px;
+  margin-right: 20px;
+  background: white;
+  border-radius: 8px;
+  border: 2px solid #5172a3;
+  color: #5172a3;
+  text-align: center;
+  width: 150px !important;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.divEditWrapper.divEditReviewWrapper > a > span.spanIconShortCombined:hover {
+  background: #5172a3;
+  color: white;
+}
+
+/*--------------------------------------------------------------
+# Forums
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# WPFORO Forum Plugin
+--------------------------------------------------------------*/
+/*fix hover tooltip "for edit user in dashboard" hover on profile page in forum*/
+
+#wpforo #wpforo-wrap .wpf-profile-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 8% !important;
+  font-size: 14px;
+}
+
+#wpforo #wpforo-wrap .wpf-profile-panel .wpforo-user-tools {
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+#wpforo #wpforo-wrap .wpf-profile-panel .wpforo-user-tools i {
+  margin-left: 100px;
+  width: 70px;
+}
+
+/*#wpforo #wpforo-wrap i.fas.fa-user-pen {
+  width: 70px;
+  margin-right: 70px;
+  text-align: right;
+}
+
+#wpforo #wpforo-wrap i.fas.fa-user-pen:hover {
+  width: 70px;
+  margin-right: 70px;
+}*/
+/*----
+### Single Module
+---- */
+.forums-single {
+  margin-top: 0px;
+  margin-bottom: 14px;
+  padding: 0px;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  background: #f5f5f5;
+}
+
+.forums-single #wpforo #wpforo-wrap {
+  padding: 10px 28px 28px 28px;
+}
+
+/*--------------------------------------------------------------
+# Blog Page
+--------------------------------------------------------------*/
+
+body .fl-post-grid-title {
+  padding: 12px 0px;
+}
+
+/*making the blog titles even to just two lines*/
+.fl-post-grid-title a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/*blog images resize*/
+div.fl-post-grid-image img {
+  width: 200px;
+  /* width of container */
+  height: 200px !important;
+  /* height of container */
+  object-fit: cover;
+  object-position: 20% 10%;
+}
+
+@media (max-width: 990px) {
+  div.fl-post-grid-image img {
+    width: 250px;
+    /* width of container */
+    height: 250px !important;
+    /* height of container */
+    object-fit: cover;
+    object-position: 20% 10%;
+  }
+}
+
+@media (max-width: 769px) {
+  div.fl-post-grid-image img {
+    width: 400px;
+    /* width of container */
+    height: 300px !important;
+    /* height of container */
+    object-fit: cover;
+    object-position: 20% 10%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Gravity Forms
+--------------------------------------------------------------*/
+
+/*submit button*/
+#gform_submit_button_3,
+#gform_submit_button_2 {
+  height: 64px;
+  padding: 12px 16px;
+  align-items: center;
+  border: 2px solid #5172a3;
+  border-radius: 8px;
+  background: #5172a3;
+  font-size: 16px;
+  font-weight: 500 !important;
+  text-align: center !important;
+  color: #fff;
+}
+
+#gform_submit_button_3:hover,
+#gform_submit_button_2:hover {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transition: color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  border: 2px solid #5172a3;
+  border-radius: 8px;
+  background: #2b4975 !important;
+  color: #fff !important;
+}
+
+/*fields side by side*/
+
+#field_3_7,
+#field_3_14,
+#field_2_14,
+#field_2_11 {
+  width: 48%;
+  display: inline-block;
+  margin-right: 12px;
+}
+
+#field_3_6,
+#field_3_16,
+#field_2_15,
+#field_2_7 {
+  width: 48%;
+  display: inline-block;
+  margin-left: 12px;
+}
+
+@media (max-width: 875px) {
+  #field_3_7,
+  #field_3_14,
+  #field_2_14,
+  #field_2_11 {
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  #field_3_6,
+  #field_3_16,
+  #field_2_15,
+  #field_2_7 {
+    width: 100%;
+
+    margin-left: 0px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Age Gate
+--------------------------------------------------------------*/
+/**Age Gate **/
+h2.age-gate__headline {
+  color: white;
+}
+
+/*--------------------------------------------------------------
+# Blend Create Page 
+--------------------------------------------------------------*/
+
+div.container.divBlendAddEdit.divBlendAddEditIntroduction {
+  padding-bottom: 20px;
+}
+
+/*div.container.divBlendAddEdit.divBlendAddeditFormWrapper {
+
+}
+*/
+div.container.divBlendAddEdit {
+  width: 100%;
+}
+
+/*#brandInputToggle {
+  font-size: 12px;
+}*/
+
+.divBlendAddEdit .form-group {
+  padding-bottom: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.divBlendAddEdit div.column div.form-group {
+  padding-bottom: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+/*.checkbox-columns {
+}*/
+
+.divBlendAddEdit .form-group label {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 17%;
+  vertical-align: middle;
+}
+
+.divBlendAddEdit .form-control {
+  margin-top: 20px !important;
+}
+
+/*#divPackagingInputWrapper {
+
+}*/
+
+/*#checkbox-columns-flavoring > div > div:nth-child(42) {
+}*/
+
+/*#divPackagingInputWrapper .form-control {
+}*/
+
+#divPackagingInputWrapper > label:nth-child(1) {
+  display: block;
+  width: 100%;
+}
+
+input#tinWeightInput {
+  height: 45px;
+}
+
+#bulkInput {
+  display: inline-block;
+  width: 20%;
+}
+
+#divPackagingInputWrapper > label:nth-child(7) {
+  display: inline-block;
+}
+
+/*#checkbox-columns-flavoring > div > div:nth-child {
+	background: teal;
+}
+*/
+
+/*.divBlendAddEdit label {
+  display: inline-block;
+  font-size: 16px;
+	line-height: 1.5;
+  width: 17%;
+	 vertical-align: middle;
+}*/
+
+.divBlendAddEdit input[type="text"] {
+  display: inline-block;
+  width: 70%;
+  color: var(--dark-gray, #666);
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  vertical-align: middle;
+  height: 64px !important;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--dark-gray, #666);
+  background: var(--white, #fff);
+  margin-left: 3%;
+}
+
+.divBlendAddEdit textarea {
+  display: inline-block;
+  width: 70%;
+  height: 64px !important;
+  margin-left: 3%;
+}
+
+/*.divBlendAddEdit input {
+	margin-bottom:20px !important}*/
+
+/*.divBlendAddEdit input[type=checkbox]  {
+	display: inline-block;
+	width: 70%;
+	background: blue;
+}*/
+
+/*
+select.ddlBrandChooser.ddlBrandChooseAddEditBlend,
+select.ddlBlendTypeChooser,
+select.ddlCutChooser*/
+
+.divBlendAddEdit select {
+  display: inline-block;
+  width: 70%;
+  color: var(--dark-gray, #666);
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  vertical-align: middle;
+  height: 64px !important;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--dark-gray, #666);
+  background: var(--white, #fff);
+  margin-left: 3%;
+}
+
+/*.form-group.divCheckboxContainer.divBlendAddFlavorsWrapper {
+
+}*/
+
+/*.divCheckboxGroupWrapper.divCheckboxGroupWrapperFlavoring {
+	background: orange;
+}*/
+
+/*.form-group.divCheckboxContainer.divBlendAddContentsWrapper {
+	
+}
+*/
+
+.divBlendAddEdit
+  .form-group.divCheckboxContainer.divBlendAddContentsWrapper
+  label {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.divBlendAddEdit
+  .form-group.divCheckboxContainer.divBlendAddFlavorsWrapper
+  label {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 100%;
+  vertical-align: middle;
+}
+
+#checkbox-columns-content label {
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Blend Create Page 
+--------------------------------------------------------------*/
+div.divTableWrapper.divBlendTableWrapper td:nth-child(1),
+div.divTableWrapper.divBlendTableWrapper th:nth-child(1)
+/*.blendTableHeader td:nth-child(1),
+.blendSearchIndexRow th:nth-child(1)*/ {
+  width: 50%;
+}
+
+div.divTableWrapper.divBlendTableWrapper td:nth-child(2),
+div.divTableWrapper.divBlendTableWrapper th:nth-child(2)
+/*.blendTableHeader td:nth-child(1),
+.blendSearchIndexRow th:nth-child(1)*/ {
+  width: 15%;
+}
+
+div.divTableWrapper.divBlendTableWrapper td:nth-child(3),
+div.divTableWrapper.divBlendTableWrapper th:nth-child(3)
+/*.blendTableHeader td:nth-child(1),
+.blendSearchIndexRow th:nth-child(1)*/ {
+  width: 20%;
+}
+
+div.divTableWrapper.divBlendTableWrapper td:nth-child(4),
+div.divTableWrapper.divBlendTableWrapper th:nth-child(4)
+/*.blendTableHeader td:nth-child(1),
+.blendSearchIndexRow th:nth-child(1)*/ {
+  width: 15%;
+}
+
+@media (max-width: 1215px) {
+  div.divTableWrapper.divBlendTableWrapper td:nth-child(1),
+div.divTableWrapper.divBlendTableWrapper th:nth-child(1)
+/*.blendTableHeader td:nth-child(1),
+.blendSearchIndexRow th:nth-child(1)*/ {
+    width: 40%;
+  }
+
+  div.divTableWrapper.divBlendTableWrapper td:nth-child(2),
+div.divTableWrapper.divBlendTableWrapper th:nth-child(2)
+/*.blendTableHeader td:nth-child(1),
+.blendSearchIndexRow th:nth-child(1)*/ {
+    width: 20%;
+  }
+
+  div.divTableWrapper.divBlendTableWrapper td:nth-child(3),
+div.divTableWrapper.divBlendTableWrapper th:nth-child(3)
+/*.blendTableHeader td:nth-child(1),
+.blendSearchIndexRow th:nth-child(1)*/ {
+    width: 25%;
+  }
+
+  div.divTableWrapper.divBlendTableWrapper td:nth-child(4),
+div.divTableWrapper.divBlendTableWrapper th:nth-child(4)
+/*.blendTableHeader td:nth-child(1),
+.blendSearchIndexRow th:nth-child(1)*/ {
+    width: 15%;
+  }
+}
+
+@media (max-width: 750px) {
+  div.divTableWrapper.divBlendTableWrapper td:nth-child(1),
+div.divTableWrapper.divBlendTableWrapper th:nth-child(1)
+/*.blendTableHeader td:nth-child(1),
+.blendSearchIndexRow th:nth-child(1)*/ {
+    width: 40%;
+  }
+
+  div.divTableWrapper.divBlendTableWrapper td:nth-child(2),
+div.divTableWrapper.divBlendTableWrapper th:nth-child(2)
+/*.blendTableHeader td:nth-child(1),
+.blendSearchIndexRow th:nth-child(1)*/ {
+    width: 27%;
+  }
+
+  div.divTableWrapper.divBlendTableWrapper td:nth-child(3),
+div.divTableWrapper.divBlendTableWrapper th:nth-child(3)
+/*.blendTableHeader td:nth-child(1),
+.blendSearchIndexRow th:nth-child(1)*/ {
+    width: 25%;
+  }
+
+  div.divTableWrapper.divBlendTableWrapper td:nth-child(4),
+div.divTableWrapper.divBlendTableWrapper th:nth-child(4)
+/*.blendTableHeader td:nth-child(1),
+.blendSearchIndexRow th:nth-child(1)*/ {
+    width: 8%;
+  }
+}
+
+@media (max-width: 600px) {
+  div.divTableWrapper.divBlendTableWrapper td:nth-child(1),
+  div.divTableWrapper.divBlendTableWrapper th:nth-child(1),
+  div.divTableWrapper.divBlendTableWrapper td:nth-child(2),
+  div.divTableWrapper.divBlendTableWrapper th:nth-child(2),
+  div.divTableWrapper.divBlendTableWrapper td:nth-child(3),
+  div.divTableWrapper.divBlendTableWrapper th:nth-child(3),
+  div.divTableWrapper.divBlendTableWrapper td:nth-child(4),
+  div.divTableWrapper.divBlendTableWrapper th:nth-child(4) {
+    width: 100%;
+  }
+}
+
+div.divBlendAddBlendTypeWrapper div.divCheckboxGroupWrapper {
+  column-count: 3;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+#checkbox-columns-content,
+#checkbox-columns-flavoring {
+  column-count: 3;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  div.divBlendAddBlendTypeWrapper div.divCheckboxGroupWrapper,
+  #checkbox-columns-content,
+  #checkbox-columns-flavoring {
+    column-count: 1;
+    width: 100%;
+  }
+}
+
+.spanCheckboxValue.spanCheckboxLabel {
+  font-size: 16px !important;
+}
+
+div.container.divBlendAddEdit.divBlendAddeditFormWrapper input[type="file"] {
+  font-size: 14px;
+  margin-bottom: 28px;
+  display: inline-block;
+  width: 70%;
+  margin-left: 3%;
+}
+
+/*
+div.container.divBlendAddEdit.divBlendAddeditFormWrapper a {
+ 
+}
+	
+
+.divBlendAddEdit a.btn-secondary:hover {
+
+}
+*/
+
+a.anchAddNewBlend {
+  font-size: 14px;
+  font-weight: 500 !important;
+  margin-left: 20px;
+}
+
+@media (max-width: 800px) {
+  div.divMoreSearchAddNewBlend {
+    flex-basis: 30%;
+  }
+}
+
+@media (max-width: 600px) {
+  div.divMoreSearchAddNewBlend {
+    flex-basis: 50%;
+  }
+}
+
+/*--------------------------------------------------------------
+#  Search  
+--------------------------------------------------------------*/
+/*-----
+## Search Section
+----*/
+
+.divFormWrapper {
+  margin: 0;
+}
+
+/*div.divClearSearchWrapper.divClearBrandSearchWrapper*/
+div.divClearSearchWrapper {
+  /*background: MistyRose !important;*/
+  padding: 0px;
+  margin-top: 12px;
+}
+
+/*a.aClearSearch.aClearBrandSearch,*/
+a.aClearSearch {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 200px;
+  max-width: 100%;
+  padding-bottom: 6px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 6px;
+  background-color: #e8e8e8;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #5d5d5d;
+}
+
+/*a.aClearSearch.aClearBrandSearch:after*/
+a.aClearSearch:after {
+  display: inline-block !important;
+  vertical-align: middle;
+  margin-left: 0.5rem !important;
+  font-family: "Material Icons";
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #5d5d5d;
+  content: "\e5cd";
+}
+
+div.divClearSearchWrapper.divClearBrandSearchWrapper a:hover,
+div.divClearSearchWrapper a:hover {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.17);
+  background-color: #dbdbdb;
+  text-decoration: none !important;
+  color: #5d5d5d !important;
+}
+
+/*no results*/
+.spanUnableToFind {
+  color: #260f09;
+  font-family: Playfair Display;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.divBlendTableWrapperNoResults {
+  margin-bottom: 30px;
+}
+
+form.frmSearch {
+  margin: 0;
+  padding: 0;
+}
+
+.divFormWrapper .form-group {
+  margin-top: 24px;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+/*
+## Text input 
+*/
+
+/*form.frmBrandSearch.frmSearch input[type="text"]
+ {
+	font-size: 18px
+		background: yellow;
+
+}*/
+
+.txtTRSearchInput {
+  height: 64px !important;
+  font-size: 18px !important;
+  /*>>> had to use important for now but will go back to this*/
+}
+
+.displayNumber {
+  margin: 0 0;
+  height: 64px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 0px;
+  padding-right: 0px;
+  font-family: Rubik;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
+  color: #260f09;
+}
+
+@media (max-width: 600px) {
+  form.frmSearch {
+    margin-top: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+
+  .btnSearch {
+    margin-top: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 95%;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+}
+
+/*-----
+## Advanced Search
+----*/
+
+/*.divMoreSearchFieldsInputs .form-group {
+  
+}*/
+
+.divMoreSearchFieldsWrapper {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  background: #fff;
+}
+
+.divMoreSearchFieldsToggle {
+  color: #260f09;
+  font-family: Rubik;
+  font-size: 32px !important;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.divMoreSearchFieldsToggle .fa {
+  color: #666666;
+}
+.divMoreSearchFieldsInputs input[type="number"],
+.divMoreSearchFieldsInputs select {
+  display: inline-block;
+  width: 62%;
+  color: var(--dark-gray, #666);
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  vertical-align: middle;
+  height: 64px !important;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--dark-gray, #666);
+  background: var(--white, #fff);
+  margin-left: 3%;
+}
+
+.divMoreSearchFieldsInputs .form-group label {
+  width: 30%;
+  font-size: 16px;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+div.divAdvancedSearchFieldsToggleWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 12px;
+}
+
+div.divMoreSearchSubmitWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+div.divMoreSearchBottomLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 24px;
+}
+
+div.divMoreSearchSubmitWrapper
+  button.btn.btn-primary.btnTR.btnTRPrimary.btnSearch {
+  flex-basis: 20%;
+}
+
+div.divMoreSearchAddNewBlend {
+  flex-basis: 20%;
+}
+
+@media (max-width: 1100px) {
+  div.divMoreSearchSubmitWrapper {
+    flex-basis: 20%;
+  }
+
+  div.divMoreSearchAddNewBlend {
+    flex-basis: 25%;
+  }
+}
+@media (max-width: 990px) {
+  div.divMoreSearchSubmitWrapper {
+    flex-basis: 20%;
+  }
+
+  div.divMoreSearchAddNewBlend {
+    flex-basis: 20%;
+  }
+}
+
+@media (max-width: 800px) {
+  .divMoreSearchFieldsInputs input[type="number"],
+  .divMoreSearchFieldsInputs select {
+    width: 100%;
+    margin-right: 0%;
+    margin-left: 0%;
+  }
+
+  .divMoreSearchFieldsInputs .form-group label {
+    width: 100%;
+  }
+
+  div.divMoreSearchSubmitWrapper {
+    flex-basis: 30%;
+  }
+
+  div.divMoreSearchAddNewBlend {
+    flex-basis: 30%;
+  }
+}
+
+@media (max-width: 600px) {
+  div.divAdvancedSearchFieldsToggleWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 12px;
+  }
+
+  div.divMoreSearchSubmitWrapper {
+    flex-basis: 100%;
+    align-self: stretch;
+  }
+
+  div.divMoreSearchAddNewBlend {
+    flex-basis: 100%;
+    align-self: stretch;
+  }
+}
+
+/*--------------------------------------------------------------
+# Add new review
+--------------------------------------------------------------*/
+/*.tobacco-review-form-container {
+
+}
+*/
+.response-message {
+  height: 20px;
+}
+
+.tobacco-review-form-container form {
+  height: auto;
+}
+
+.tobacco-review-form-container select {
+  display: inline-block;
+  width: 70%;
+  color: var(--dark-gray, #666);
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  vertical-align: middle;
+  /*height: 64px !important;*/
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--dark-gray, #666);
+  background: var(--white, #fff);
+  margin-left: 3%;
+}
+
+.tobacco-review-form-container label {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 17%;
+  vertical-align: middle;
+}
+
+.tobacco-review-form-container .form-group {
+  margin-bottom: 3rem;
+}
+
+.tobacco-review-form-container textarea {
+  display: inline-block;
+  width: 70%;
+  height: 150px;
+  margin-left: 3%;
+  overflow: auto;
+  resize: vertical;
+  min-height: 64px;
+  line-height: 20px;
+  font-size: 16px;
+  color: var(--dark-gray, #666);
+}
+
+.tobacco-review-form-container input[type="text"] {
+  display: inline-block;
+  width: 70%;
+  color: var(--dark-gray, #666);
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  vertical-align: middle;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--dark-gray, #666);
+  background: white;
+  margin-left: 3%;
+}
+
+/*button.btnSubmit.btnSubmitReview {
+ height: 64px !important;
+	padding: 12px 16px;
+	align-items: center;
+	border: 2px solid #5172a3;
+	border-radius: 8px;
+	background: #5172a3;
+	font-size: 16px;
+	font-weight: 500 !important;
+	text-align: center !important;
+	color: #fff;
+}*/
+
+.divSubmitCancelReview a {
+  font-size: 16px;
+  font-weight: 500 !important;
+  margin-left: 20px;
+}
+
+@media (max-width: 600px) {
+  .tobacco-review-form-container select {
+    display: block;
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  .tobacco-review-form-container label {
+    display: block;
+    width: 100%;
+    margin-bottom: 2.5rem;
+    margin-left: 0%;
+  }
+
+  .tobacco-review-form-container textarea {
+    display: block;
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  .tobacco-review-form-container input[type="text"] {
+    display: block;
+    width: 100%;
+    margin-left: 0%;
+  }
+}
+
+/*--------------------------------------------------------------
+# New Reviews Page
+--------------------------------------------------------------*/
+div.divTableWrapper.divReviewTableWrapper table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.divReviewTableWrapper td:nth-child(1) {
+  width: auto;
+}
+
+.divReviewTableWrapper td:nth-child(2) {
+  width: 15%;
+}
+
+.divReviewTableWrapper td:nth-child(3) {
+  width: 20%;
+}
+
+.divReviewTableWrapper td:nth-child(4) {
+  width: 20%;
+}
+
+.divReviewTableWrapper td:nth-child(5) {
+  width: 10%;
+}
+
+@media (max-width: 750px) {
+  .divReviewTableWrapper td:nth-child(1) {
+    width: auto;
+  }
+
+  .divReviewTableWrapper td:nth-child(2) {
+    width: 22%;
+  }
+
+  .divReviewTableWrapper td:nth-child(3) {
+    width: auto;
+  }
+
+  .divReviewTableWrapper td:nth-child(4) {
+    width: 20%;
+  }
+
+  .divReviewTableWrapper td:nth-child(5) {
+    width: 10%;
+  }
+}
+
+@media (max-width: 600px) {
+  .table > thead {
+    display: none;
+  }
+
+  .table > tbody > tr > td {
+    width: 100%;
+  }
+
+  .divReviewTableWrapper td:nth-child(1) {
+    width: auto;
+  }
+
+  .divReviewTableWrapper td:nth-child(2) {
+    width: auto;
+  }
+
+  .divReviewTableWrapper td:nth-child(3) {
+    width: auto;
+  }
+
+  .divReviewTableWrapper td:nth-child(4) {
+    width: auto;
+  }
+
+  .divReviewTableWrapper td:nth-child(5) {
+    width: auto;
+  }
+}
+
+/*--------------------------------------------------------------
+# User Reviews Page
+--------------------------------------------------------------*/
+
+.hBadgeDetailName {
+  border-bottom: 3px solid #eaeaea;
+}
+
+.divBadgeDetailDescription {
+  padding: 18px 18px;
+  color: #260f09;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/*--------------------------------------------------------------
+# Users Profile Reviews 
+--------------------------------------------------------------*/
+.divUserReviewTableWrapper td:nth-child(1) {
+  width: 30%;
+}
+
+.divUserReviewTableWrapper td:nth-child(2) {
+  width: 10%;
+}
+
+.divUserReviewTableWrapper td:nth-child(3) {
+  width: 15%;
+}
+
+.divUserReviewTableWrapper td:nth-child(4) {
+  width: 10%;
+}
+
+.divUserReviewTableWrapper td:nth-child(5) {
+  width: 10%;
+}
+
+/*delete edit icons */
+
+.divUserReviewTableWrapper a.anchDeleteReview.anchDeleteLink > span > span {
+  color: #ca372e;
+  padding: 5px;
+}
+.divUserReviewTableWrapper a.anchEditReview.anchEditLink > span > span {
+  color: #5172a3;
+  padding: 5px;
+}
+
+.anchEditReview.anchEditLink .fa-regular {
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .table > thead {
+    display: none;
+  }
+
+  .table > tbody > tr > td {
+    width: 100%;
+  }
+  .divUserReviewTableWrapper td:nth-child(1) {
+    width: auto;
+  }
+
+  .divUserReviewTableWrapper td:nth-child(2) {
+    width: auto;
+  }
+
+  .divUserReviewTableWrapper td:nth-child(3) {
+    width: auto;
+  }
+
+  .divUserReviewTableWrapper td:nth-child(4) {
+    width: auto;
+  }
+
+  .divUserReviewTableWrapper td:nth-child(5) {
+    width: auto;
+  }
+}
+
+/*menu*/
+
+.divUserTabsWrapper {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  /*display: flex;
+	flex-direction: row;
+	align-items: stretch;	
+	justify-content:flex-start;
+	flex-wrap: wrap;*/
+  /*gap: 12px;	
+	border-radius:4px;*/
+}
+
+div.divUserTab {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.divUserTab a {
+  /*	padding: 16px 10px;
+  background-color: #5172A3;*/
+  border-radius: 8px;
+  border: 2px solid var(--slate, #5172a3);
+  padding: 12px 16px;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+}
+
+div.divUserTab a:hover,
+div.divUserTab a:focus {
+  /* background-color: #2B4975;
+	color: #fff;*/
+  text-decoration: none;
+  transition: all 0.5s ease 0s;
+}
+
+@media (max-width: 600px) {
+  .divUserTabsWrapper {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+/*--------------------------------------------------------------
+# WordPress
+--------------------------------------------------------------*/
+
+#wpadminbar .quicklinks .ab-empty-item,
+#wpadminbar .quicklinks a,
+#wpadminbar .shortlink-input {
+  background: black;
+}
+
+/*--------------------------------------------------------------
+# Retailer View 
+--------------------------------------------------------------*/
+.divRetailerBlendControlsWrapper {
+	
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+}
+
+.divRetailerBlendControlInput {
+flex-grow: 1;
+}
+
+div.divRetailerBlendControlInput > input {
+height: 45px;
+}
+
+div.divRetailerBlendControlInput > label {
+  display: none;
+}
+
+div.divRetailerBlendControlActions > a.anchModifyRetailerLink.anchAddSaveRetailerLink {
+border-radius: 8px;
+	padding: 9px 3px 9px 9px;
+border: 2px solid var(--Slate, #5172A3);
+background: var(--Slate, #5172A3);
+	color: white !important;
+	font-size: 20px;
+	margin-right: 10px;
+	
+}
+
+a.anchModifyRetailerLink.anchAddSaveRetailerLink:hover,
+a.anchModifyRetailerLink.anchRemoveRetailerLink:hover{
+	 transform: translateY(5px);
+  box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+
+div.divRetailerBlendControlActions > a.anchModifyRetailerLink.anchRemoveRetailerLink {
+border-radius: 8px;
+	padding: 9px 9px 9px 12px;
+border: 2px solid #CA372E;
+background:#CA372E;
+	color: white !important;
+	font-size: 20px;
+	
+}
+
+div.divRetailCurrentStatsWrapper.divRetailStatsFixed {
+	border-radius: 8px;
+background: rgba(255, 255, 255, 0.98);
+box-shadow: 0px 4px 24px 12px rgba(0, 0, 0, 0.12);
+	padding: 20px;
+	width: 40%;
+}
+
+@media (max-width: 800px) {
+  div.divRetailCurrentStatsWrapper.divRetailStatsFixed  {
+   width: 80%;
+  }
+}
+
+div.divRetailerCheckboxWrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+div.divRetailerCheckboxWrapper > div{
+color: var(--Dark-Brown, #260F09);
+font-family: Rubik;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px; 
+	margin-left: 10px;
+}
+
+
+div.divRetailerLinkCountWrapper {
+	color: var(--Dark-Brown, #260F09);
+font-family: Rubik;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px; 
+}
+
+.spanRetailerBoldLabel {
+	font-weight: 600;
+}
+
+/**Retailer View**/
+
+div.form-group.divRetailerEditInputWrapper.divRetailerSwitchWrapper{
+}
+
+div.form-group.divRetailerEditInputWrapper.divRetailerSwitchWrapper > label {
+	    width: 30%;
+    font-size: 16px;
+    line-height: 1.5;
+    vertical-align: middle;
+}
+
+.ddlRetailerSwitch {
+	    display: inline-block;
+    width: 62%;
+    color: var(--dark-gray, #666);
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    vertical-align: middle;
+    height: 64px !important;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--dark-gray, #666);
+    background: var(--white, #fff);
+    margin-left: 3%;
+}
+
+#frmRetailerSettings > div.form-group {
+	font-size: 16px;
+}
+
+#divAvailableLinks {
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    background: white;
+    padding: 50px;
+	color: #a88c5c !important;
+    font-family: Rubik;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+	width: 50%;
+}
+
+#fl-post-1352 div > h1{
+      color: #260f09;
+    font-family: Playfair Display;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+#frmRetailerSettings > div > div.form-group.divRetailerEditInputWrapper.divRetailerEditUserListWrapper.divRetailerInfoOnlyWrapper > div.divContactTRMessageWrapper {
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+
+#frmRetailerSettings > div > div.form-group.divRetailerEditInputWrapper.divRetailerViewPaidDatesWrapper > label {
+	display: block;
+}
+
+#frmRetailerSettings > div > div.divFormButtonWrapper.divActionWrapperSettings.divSubmitCancelSettings > div.divHideOnSuccess > button {
+	margin-top: 20px;
+}
+
+#fl-post-1352 label {
+margin-top: 20px;
+}
+
+
+.spanRetailerActiveLinksLabel {
+	color: var(--Slate, #5172A3);
+font-family: Rubik;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px;
+	margin-left: 10px;
+}
+
+.spanRemainingLinksLabel {
+	color: #CA372E;
+font-family: Rubik;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px; 
+		margin-left: 10px;
+}
+
+div.divRetailerLinkApplyWrapper  {
+	margin-top: 10px;
+}
+
+div.divRetailerLinkApplyWrapper > a {
+    padding: 8px;
+    align-items: center;
+    border: 2px solid #5172a3;
+    border-radius: 8px;
+    background: #5172a3;
+    font-size: 12px;
+    font-weight: 500 !important;
+    text-align: center !important;
+    color: #fff;
+}
+
+div.divRetailerLinkApplyWrapper > a:hover {
+	  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transition: color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  border: 2px solid #5172a3;
+  border-radius: 8px;
+  background: #2b4975 !important;
+  color: #fff !important;
+text-decoration: none;
+}
+
+#ui-datepicker-div > table {
+	background: white;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default {
+	background: white;
+}
+
+
+#ui-datepicker-div > table tr td a {
+    font-family: Rubik;
+    font-size: 14px;
+    font-weight: 600 !important;
+    font-style: normal;
+    /* line-height: 1.5; */
+    color: #5172a3 !important;
+}
+
+
+
+
+.divDeleteWrapper.divDeleteRetailerWrapper {
+                margin-top: 40px;
+}
+
+a.anchDeleteLink.anchDeleteRetailer {
+                padding: 12px 16px;
+                margin-right: 20px;
+                margin-top: 20px;
+                background: white;
+                border-radius: 8px;
+                border: 2px solid #ca372e;
+                color: #ca372e;
+                text-align: center;
+                width: 300px !important;
+                justify-content: center;
+                align-items: center;
+	font-size: 16px !important;
+            }
+
+#frmRetailerSettings > div.divDeleteWrapper.divDeleteRetailerWrapper > a:hover,
+#frmRetailerSettings > div > div.divDeleteWrapper.divDeleteRetailerWrapper > a:hover {
+                color: white !important;
+                text-decoration: none;
+                background: #ca372e;
+            }
+
+div.divAdminOnlyWrapper.divAdminSwitchRetailerWrapper > div.divAddNewRetailerLinkWrapper > a {
+	border-radius: 8px;
+    border: 2px solid var(--slate, #5172a3);
+    height: 64px;
+    padding: 12px 16px;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+}
+
+div.divAdminOnlyWrapper.divAdminSwitchRetailerWrapper > div.divAddNewRetailerLinkWrapper {
+	margin-top: 20px;
+}
