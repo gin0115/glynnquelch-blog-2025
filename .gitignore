@@ -19,6 +19,8 @@ languages/*
 #
 plugins/*
 
+*/node_modules
+
 
 
 mu-plugins/*
