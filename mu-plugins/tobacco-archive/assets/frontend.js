@@ -185,7 +185,11 @@ function initTobaccoQueryBlock(block) {
 			const tobaccoData = allTobaccoData[index];
 			const shouldShow = filteredData.includes(tobaccoData);
 			
+<<<<<<< HEAD
 			item.style.display = shouldShow ? 'flex' : 'none';
+=======
+			item.style.display = shouldShow ? 'block' : 'none';
+>>>>>>> main
 		});
 	}
 	
