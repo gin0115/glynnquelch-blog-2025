@@ -84,17 +84,17 @@ function tobacco_archive_register_post_type() {
 
 	$args = array(
 		'labels'             => $labels,
-		'public'             => false, // Not public - no frontend access
-		'publicly_queryable' => false, // Not queryable on frontend
+		'public'             => true, // Make public for archive access
+		'publicly_queryable' => true, // Queryable on frontend
 		'show_ui'            => true, // Show in admin
 		'show_in_menu'       => true, // Show in admin menu
-		'show_in_nav_menus'  => false, // Not in nav menus
+		'show_in_nav_menus'  => true, // Show in nav menus
 		'show_in_admin_bar'  => true, // Show in admin bar
 		'show_in_rest'       => true, // Enable REST API
-		'query_var'          => false, // No query var
-		'rewrite'            => false, // No rewrite rules
+		'query_var'          => true, // Enable query var
+		'rewrite'            => array( 'slug' => 'tobacco-reviews' ), // Enable rewrite rules
 		'capability_type'    => 'post',
-		'has_archive'        => false, // No archive page
+		'has_archive'        => true, // Enable archive page
 		'hierarchical'       => false,
 		'menu_position'      => null,
 		'menu_icon'          => 'dashicons-star-filled',
@@ -106,6 +106,17 @@ function tobacco_archive_register_post_type() {
 	register_post_type( 'tobacco_review', $args );
 }
 add_action( 'init', 'tobacco_archive_register_post_type' );
+
+/**
+ * Set default sort order for tobacco review archives
+ */
+function tobacco_archive_set_archive_sort_order( $query ) {
+	if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'tobacco_review' ) ) {
+		$query->set( 'orderby', 'title' );
+		$query->set( 'order', 'ASC' );
+	}
+}
+add_action( 'pre_get_posts', 'tobacco_archive_set_archive_sort_order' );
 
 /**
  * Add REST API endpoint for tobacco reviews
@@ -221,7 +232,7 @@ function tobacco_archive_render_query_block( $attributes, $content ) {
 	$show_profile = $attributes['showProfile'] ?? true;
 	$show_description = $attributes['showDescription'] ?? false;
 
-	// Get all tobacco reviews
+	// Get all tobacco reviews - sorted alphabetically by title
 	$args = array(
 		'post_type' => 'tobacco_review',
 		'post_status' => 'publish',
@@ -294,6 +305,11 @@ function tobacco_archive_render_query_block( $attributes, $content ) {
 			}
 		}
 	}
+	
+	// Sort tobacco data alphabetically by post title
+	usort( $tobacco_data, function( $a, $b ) {
+		return strcasecmp( $a['title'], $b['title'] );
+	});
 	
 	// Remove duplicates and sort filter options
 	foreach ( $filter_options as $key => $values ) {
@@ -428,6 +444,13 @@ function tobacco_archive_render_query_block( $attributes, $content ) {
  * Enqueue block assets
  */
 function tobacco_archive_enqueue_assets() {
+	// Check if we're on the tobacco review archive page
+	$is_archive = is_post_type_archive( 'tobacco_review' );
+	
+	// Always enqueue for blocks, or specifically for archive page
+	if ( ! $is_archive && ! has_block( 'tobacco-archive/tobacco-query' ) && ! has_block( 'tobacco-archive/tobacco-blend' ) ) {
+		return;
+	}
 	// Enqueue tobacco blend block assets
 	$blend_js_path         = TOBACCO_ARCHIVE_DIR_PATH . 'blocks/build/tobacco-blend/index.js';
 	$blend_editor_css_path = TOBACCO_ARCHIVE_DIR_PATH . 'blocks/build/tobacco-blend/index.css';
@@ -505,9 +528,234 @@ function tobacco_archive_enqueue_assets() {
 			true
 		);
 	}
+	
+	// Add custom styles for archive page
+	if ( $is_archive ) {
+		wp_add_inline_style( 'tobacco-archive-query-style', '
+			.tobacco-archive-page {
+				padding: 2rem 0;
+			}
+			.tobacco-archive-page .container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 1rem;
+			}
+			.tobacco-archive-page .page-header {
+				text-align: center;
+				margin-bottom: 3rem;
+			}
+			.tobacco-archive-page .page-title {
+				font-size: 2.5rem;
+				margin-bottom: 1rem;
+				color: var(--yuki-headings-color, #333);
+			}
+			.tobacco-archive-page .archive-description {
+				font-size: 1.1rem;
+				color: var(--yuki-content-base-color, #666);
+				max-width: 600px;
+				margin: 0 auto;
+			}
+		' );
+	}
+	
 }
 add_action( 'enqueue_block_editor_assets', 'tobacco_archive_enqueue_assets' );
 add_action( 'wp_enqueue_scripts', 'tobacco_archive_enqueue_assets' );
+
+/**
+ * Add admin menu for tobacco archive settings
+ */
+function tobacco_archive_add_admin_menu() {
+	add_options_page(
+		'Tobacco Archive Settings',
+		'Tobacco Archive',
+		'manage_options',
+		'tobacco-archive-settings',
+		'tobacco_archive_settings_page'
+	);
+}
+add_action( 'admin_menu', 'tobacco_archive_add_admin_menu' );
+
+/**
+ * Enqueue media scripts for settings page
+ */
+function tobacco_archive_enqueue_admin_scripts( $hook ) {
+	if ( 'settings_page_tobacco-archive-settings' !== $hook ) {
+		return;
+	}
+	
+	wp_enqueue_media();
+	wp_enqueue_script( 'jquery' );
+}
+add_action( 'admin_enqueue_scripts', 'tobacco_archive_enqueue_admin_scripts' );
+
+/**
+ * Register settings for tobacco archive
+ */
+function tobacco_archive_register_settings() {
+	register_setting( 'tobacco_archive_settings', 'tobacco_archive_fallback_image' );
+}
+add_action( 'admin_init', 'tobacco_archive_register_settings' );
+
+/**
+ * Settings page HTML
+ */
+function tobacco_archive_settings_page() {
+	?>
+	<div class="wrap">
+		<h1>Tobacco Archive Settings</h1>
+		<form method="post" action="options.php">
+			<?php
+			settings_fields( 'tobacco_archive_settings' );
+			do_settings_sections( 'tobacco_archive_settings' );
+			$fallback_image_id = get_option( 'tobacco_archive_fallback_image' );
+			$fallback_image_url = $fallback_image_id ? wp_get_attachment_url( $fallback_image_id ) : '';
+			?>
+			<table class="form-table">
+				<tr>
+					<th scope="row">Fallback Image</th>
+					<td>
+						<div class="tobacco-archive-image-upload">
+							<input type="hidden" name="tobacco_archive_fallback_image" id="tobacco_archive_fallback_image" value="<?php echo esc_attr( $fallback_image_id ); ?>" />
+							<div id="tobacco_archive_image_preview" style="margin-bottom: 10px;">
+								<?php if ( $fallback_image_url ) : ?>
+									<img src="<?php echo esc_url( $fallback_image_url ); ?>" style="max-width: 200px; height: auto;" />
+								<?php endif; ?>
+							</div>
+							<button type="button" class="button" id="tobacco_archive_upload_image">Select Image</button>
+							<button type="button" class="button" id="tobacco_archive_remove_image" style="<?php echo $fallback_image_url ? '' : 'display: none;'; ?>">Remove Image</button>
+						</div>
+						<p class="description">Select or upload a fallback image to use when tobacco reviews don't have a featured image.</p>
+					</td>
+				</tr>
+			</table>
+			<?php submit_button(); ?>
+		</form>
+	</div>
+
+	<script>
+	jQuery(document).ready(function($) {
+		var mediaUploader;
+		
+		$('#tobacco_archive_upload_image').click(function(e) {
+			e.preventDefault();
+			
+			if (mediaUploader) {
+				mediaUploader.open();
+				return;
+			}
+			
+			mediaUploader = wp.media({
+				title: 'Select Fallback Image',
+				button: {
+					text: 'Use this image'
+				},
+				multiple: false
+			});
+			
+			mediaUploader.on('select', function() {
+				var attachment = mediaUploader.state().get('selection').first().toJSON();
+				$('#tobacco_archive_fallback_image').val(attachment.id);
+				$('#tobacco_archive_image_preview').html('<img src="' + attachment.url + '" style="max-width: 200px; height: auto;" />');
+				$('#tobacco_archive_remove_image').show();
+			});
+			
+			mediaUploader.open();
+		});
+		
+		$('#tobacco_archive_remove_image').click(function(e) {
+			e.preventDefault();
+			$('#tobacco_archive_fallback_image').val('');
+			$('#tobacco_archive_image_preview').html('');
+			$(this).hide();
+		});
+	});
+	</script>
+	<?php
+}
+
+/**
+ * Get fallback image URL
+ *
+ * Retrieves the URL of the fallback image set in the plugin settings.
+ * This image is used when tobacco reviews don't have a featured image.
+ *
+ * @return string The fallback image URL, or empty string if not set.
+ */
+function tobacco_archive_get_fallback_image() {
+	$fallback_image_id = get_option( 'tobacco_archive_fallback_image', '' );
+	
+	if ( $fallback_image_id ) {
+		return wp_get_attachment_url( $fallback_image_id );
+	}
+	
+	return '';
+}
+
+/**
+ * Control has_post_thumbnail for tobacco reviews based on context
+ *
+ * For tobacco reviews:
+ * - Returns true in archive/query contexts to show fallback images
+ * - Returns false on single pages to hide featured images
+ * - Preserves original behavior for other post types
+ *
+ * @param bool   $has_thumbnail Whether the post has a thumbnail.
+ * @param int    $wp_post       The post ID.
+ * @param string $media_is      Media type (unused).
+ * @return bool Modified thumbnail status based on context.
+ */
+function tobacco_archive_control_thumbnail_display( $has_thumbnail, $wp_post, $media_is ) {
+	global $post;
+	
+	if ( $post && $post->post_type === 'tobacco_review' ) {
+		// On single tobacco review pages, return false to hide featured image
+		if ( is_singular( 'tobacco_review' ) ) {
+			return false;
+		}
+		
+		// In archive/query contexts, return true to show fallback images
+		return true;
+	}
+	
+	return $has_thumbnail;
+}
+add_filter( 'has_post_thumbnail', 'tobacco_archive_control_thumbnail_display', 10, 3 );
+
+/**
+ * Provide fallback image for tobacco reviews when get_the_post_thumbnail is called
+ *
+ * When a tobacco review doesn't have a featured image, this function
+ * provides the fallback image set in the plugin settings.
+ *
+ * @param string $html              The post thumbnail HTML.
+ * @param int    $post_id           The post ID.
+ * @param int    $post_thumbnail_id The post thumbnail ID.
+ * @param string $size              The post thumbnail size.
+ * @param array  $attr              Array of attributes for the image markup.
+ * @return string The modified HTML.
+ */
+function tobacco_archive_provide_fallback_thumbnail( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
+	if ( get_post_type( $post_id ) === 'tobacco_review' && ! $post_thumbnail_id ) {
+		$fallback_image_id = get_option( 'tobacco_archive_fallback_image' );
+		
+		if ( $fallback_image_id ) {
+			// Use wp_get_attachment_image to get properly formatted image with all attributes
+			$attr = wp_parse_args( $attr, array(
+				'class'    => 'w-full h-full wp-post-image',
+				'decoding' => 'async',
+			) );
+			
+			$html = wp_get_attachment_image( $fallback_image_id, $size, false, $attr );
+		}
+	}
+	
+	return $html;
+}
+add_filter( 'post_thumbnail_html', 'tobacco_archive_provide_fallback_thumbnail', 10, 5 );
+
+
+
 
 // Include WP-CLI command
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
