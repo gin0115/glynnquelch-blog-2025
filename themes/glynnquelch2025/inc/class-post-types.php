@@ -356,6 +356,12 @@ class Post_Types {
 			if ( $query->is_post_type_archive( 'software' ) ) {
 				return;
 			}
+
+			// If the tobacco review archive, let it show only tobacco review posts
+			if ( $query->is_post_type_archive( 'tobacco_review' ) ) {
+				$query->set( 'post_type', 'tobacco_review' );
+				return;
+			}
 			
 			$post_types = $query->get( 'post_type' );
 
