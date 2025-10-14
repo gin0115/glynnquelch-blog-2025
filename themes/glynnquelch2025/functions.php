@@ -123,15 +123,3 @@ require_once GQ2025_PATH . 'inc/class-acf.php';
 require_once GQ2025_PATH . 'inc/class-post-types.php';
 require_once GQ2025_PATH . 'inc/class-media.php';
 require_once GQ2025_PATH . 'inc/class-block-customizations.php';
-
-/**
- * Hide featured image for tobacco reviews on single pages only
- */
-function glynnquelch2025_hide_tobacco_review_featured_image() {
-	if ( is_singular( 'tobacco_review' ) ) {
-		// Remove the featured image display for tobacco reviews on single pages
-		remove_action( 'yuki_before_render_featured_image', 'yuki_show_article_feature_image' );
-		remove_action( 'yuki_after_render_featured_image', 'yuki_show_article_feature_image' );
-	}
-}
-add_action( 'wp', 'glynnquelch2025_hide_tobacco_review_featured_image' );
