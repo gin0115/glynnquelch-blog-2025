@@ -19,6 +19,9 @@ languages/*
 #
 plugins/*
 
+# Parser plugin is NOT tracked (temporary, will be deleted after import)
+plugins/saggy-pants-importer
+
 */node_modules/*
 
 
@@ -26,6 +29,10 @@ plugins/*
 mu-plugins/*
 !mu-plugins/mu-loader.php
 !mu-plugins/tobacco-archive
+!mu-plugins/saggy-pants-archive
+
+# Exclude the source HTML files from saggy-pants-archive
+mu-plugins/saggy-pants-archive/Saggy-Pants*
 
 
 
