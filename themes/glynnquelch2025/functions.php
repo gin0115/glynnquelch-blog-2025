@@ -113,6 +113,21 @@ function glynnquelch2025_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'glynnquelch2025_enqueue_styles' );
 
+/**
+ * Enqueue custom styles for sp-archive post type
+ */
+function glynnquelch2025_enqueue_sp_archive_styles() {
+	if ( is_singular( 'sp-archive' ) || is_tax( 'sp-band' ) || is_tax( 'archive-type' ) ) {
+		wp_enqueue_style(
+			'glynnquelch2025-sp-archive',
+			get_stylesheet_directory_uri() . '/css/sp-archive.css',
+			array(),
+			GQ2025_VERSION
+		);
+	}
+}
+add_action( 'wp_enqueue_scripts', 'glynnquelch2025_enqueue_sp_archive_styles' );
+
 // Require customizer options.
 require_once GQ2025_PATH . 'customizer.php';
 // Require starter content options.

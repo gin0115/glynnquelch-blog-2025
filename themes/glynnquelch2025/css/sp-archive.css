@@ -1,0 +1,118 @@
+/* Saggy Pants Archive Custom Styles */
+
+
+/* Paragraph spacing in post content */
+
+body.single-sp-archive .entry-content p {
+    margin-bottom: 15px;
+}
+
+
+/* Archive type display */
+
+body.single-sp-archive .entry-header .sp-archive-type {
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+
+/* Entry title styling */
+
+body.single-sp-archive .entry-header .entry-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+body.single-sp-archive .entry-header .entry-title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 3em;
+    height: 4px;
+    left: 0;
+    bottom: -1px;
+    background: var(--yuki-heading-indicator, var(--yuki-primary-color));
+}
+
+.sp-archive-footer {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid currentColor;
+}
+
+.sp-archive-meta {
+    margin-bottom: 1.5rem;
+}
+
+.sp-archive-meta:last-child {
+    margin-bottom: 0;
+}
+
+.sp-archive-meta .meta-label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.sp-archive-meta .meta-value {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.sp-archive-meta .meta-value>a {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.sp-archive-related-posts {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid currentColor;
+}
+
+.sp-archive-related-posts .related-posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sp-archive-related-posts .related-post-item {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.sp-archive-related-posts .related-post-item::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+}
+
+.sp-archive-related-posts .related-post-item:last-child {
+    margin-bottom: 0;
+}
+
+.sp-archive-related-posts .related-post-link {
+    text-decoration: none;
+}
+
+.sp-archive-related-posts .related-post-link:hover {
+    text-decoration: underline;
+}
+
+/* Content area max width */
+body.single-sp-archive .entry-content {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Lightbox image max width */
+body.single-sp-archive .wp-lightbox-container img {
+    max-width: 400px;
+}
+
