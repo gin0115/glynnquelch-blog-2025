@@ -33,6 +33,10 @@ mu-plugins/*
 
 # Exclude the source HTML files from saggy-pants-archive
 mu-plugins/saggy-pants-archive/Saggy-Pants*
+mu-plugins/saggy-pants-archive/Saggy-Pants 09/
+
+# Exclude import temp directory
+import_temp/
 
 
 
