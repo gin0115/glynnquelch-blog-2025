@@ -156,10 +156,29 @@ function saggy_pants_archive_register_band_taxonomy() {
 add_action( 'init', 'saggy_pants_archive_register_band_taxonomy' );
 
 /**
- * Set default sort order for sp-archive archives
+ * Set default sort order for sp-archive archives and ensure taxonomy queries work
  */
 function saggy_pants_archive_set_archive_sort_order( $query ) {
-	if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'sp-archive' ) ) {
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+
+	// Set sort order for post type archives
+	if ( is_post_type_archive( 'sp-archive' ) ) {
+		$query->set( 'orderby', 'date' );
+		$query->set( 'order', 'DESC' );
+	}
+
+	// Ensure taxonomy archives query the correct post type
+	if ( is_tax( 'sp-band' ) || is_tax( 'archive-type' ) ) {
+		$query->set( 'post_type', 'sp-archive' );
+		$query->set( 'orderby', 'date' );
+		$query->set( 'order', 'DESC' );
+	}
+
+	// Ensure tag archives only show sp-archive posts
+	if ( is_tag() ) {
+		$query->set( 'post_type', 'sp-archive' );
 		$query->set( 'orderby', 'date' );
 		$query->set( 'order', 'DESC' );
 	}
