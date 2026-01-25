@@ -29,9 +29,11 @@ mu-plugins/*
 !mu-plugins/tobacco-archive
 !mu-plugins/saggy-pants-archive
 
-# Exclude the source HTML files from saggy-pants-archive
+# Exclude source files from saggy-pants-archive
 mu-plugins/saggy-pants-archive/Saggy-Pants*
 mu-plugins/saggy-pants-archive/Saggy-Pants 09/
+mu-plugins/saggy-pants-archive/audio/
+mu-plugins/saggy-pants-archive/gid/
 
 # Exclude import temp directory
 import_temp/
