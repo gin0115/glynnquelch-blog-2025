@@ -20,7 +20,7 @@ languages/*
 plugins/*
 !plugins/book-viewer-block
 
-*/node_modules/*
+**/node_modules/
 
 
 
