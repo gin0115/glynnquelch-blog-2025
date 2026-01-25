@@ -1,0 +1,512 @@
+/**
+ * Frontend styles for Book Viewer block.
+ * Handles both the CSS fallback and the JS-enhanced flipbook.
+ */
+
+.book-viewer {
+    --book-page-width: 400px;
+    --book-page-height: 600px;
+    --book-aspect-ratio: 1.5;
+    --book-bg: #1a1a1a;
+    --book-page-bg: #fff;
+    --book-shadow: rgba(0, 0, 0, 0.3);
+    --book-nav-bg: rgba(0, 0, 0, 0.7);
+    --book-nav-color: #fff;
+    --book-page-padding: 10px; // Padding on outer edges only
+    --book-padding-color: transparent; // Customizable via block - fallback to transparent
+    position: relative;
+    max-width: 100%;
+    margin: 2rem auto;
+    // Reset theme margins ONLY
+    img {
+        margin: 0 !important;
+    }
+}
+
+// Book container - uses padding color for the outer frame
+.book-viewer__book {
+    background: var(--book-padding-color, var(--book-bg));
+    border-radius: 8px;
+    padding: var(--book-page-padding);
+    overflow: visible; // Changed from hidden to prevent clipping
+}
+
+// =====================
+// NO-JS FALLBACK STYLES
+// =====================
+// Cover pages (full width in fallback)
+.book-viewer__page--cover {
+    max-width: calc(var(--book-page-width) * 2);
+    margin: 0 auto var(--book-page-padding);
+    background: var(--book-page-bg);
+    border-radius: 4px;
+    box-shadow: 0 4px 20px var(--book-shadow);
+    overflow: hidden;
+    &:last-child {
+        margin-bottom: 0;
+        margin-top: var(--book-page-padding);
+    }
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+// Inner pages grid - 2 columns on desktop, NO GAP between pages
+.book-viewer__pages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0; // No gap between left and right pages
+    max-width: calc(var(--book-page-width) * 2);
+    margin: 0 auto;
+}
+
+.book-viewer__page--inner {
+    background: var(--book-page-bg);
+    overflow: hidden;
+    aspect-ratio: 1 / var(--book-aspect-ratio);
+    box-sizing: border-box;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; // Show full image without clipping
+        object-position: center;
+        display: block;
+    }
+    // Left page - round left corners only, shadow on left
+    &:nth-child(odd) {
+        border-radius: 4px 0 0 4px;
+        box-shadow: -2px 2px 10px var(--book-shadow);
+    }
+    // Right page - round right corners only, shadow on right
+    &:nth-child(even) {
+        border-radius: 0 4px 4px 0;
+        box-shadow: 2px 2px 10px var(--book-shadow);
+    }
+}
+
+// Blank page styling
+.book-viewer__page--blank {
+    background: var(--book-page-bg);
+    .book-viewer__blank {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient( 135deg, #fafafa 25%, #f5f5f5 25%, #f5f5f5 50%, #fafafa 50%, #fafafa 75%, #f5f5f5 75%);
+        background-size: 20px 20px;
+    }
+}
+
+// Mobile fallback - single column
+@media (max-width: 767px) {
+    .book-viewer__pages {
+        grid-template-columns: 1fr;
+        max-width: var(--book-page-width);
+        // Add gap between pages on mobile (single column)
+        gap: var(--book-page-padding);
+    }
+    .book-viewer__page--cover {
+        max-width: var(--book-page-width);
+    }
+    // On mobile, all pages get rounded corners all around
+    .book-viewer__page--inner {
+        &:nth-child(odd),
+        &:nth-child(even) {
+            border-radius: 4px;
+        }
+    }
+    // Hide auto-blank page on mobile - not needed for single column
+    .book-viewer__page--auto-blank {
+        display: none;
+    }
+}
+
+// =====================
+// NAVIGATION (hidden by default, shown by JS)
+// =====================
+.book-viewer__nav {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.book-viewer__nav-btn {
+    position: absolute;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    background: var(--book-nav-bg);
+    border: none;
+    border-radius: 50%;
+    color: var(--book-nav-color);
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        background: rgba(0, 0, 0, 0.9);
+        transform: scale(1.1);
+    }
+    &:focus {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+    }
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+    &--prev {
+        left: 10px;
+    }
+    &--next {
+        right: 10px;
+    }
+}
+
+// Page indicator (hidden by default, shown by JS)
+.book-viewer__indicator {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 12px;
+    font-size: 14px;
+    color: #666;
+    background: var(--book-padding-color, transparent);
+    border-radius: 0 0 8px 8px;
+    margin-top: -1px; // Overlap slightly to avoid gap
+}
+
+.book-viewer__separator {
+    margin: 0 2px;
+}
+
+// =====================
+// JS-ENHANCED FLIPBOOK
+// =====================
+.book-viewer--initialized {
+    // Show navigation when JS is active
+    .book-viewer__nav {
+        display: block;
+    }
+    .book-viewer__indicator {
+        display: flex;
+    }
+    // Hide the fallback grid (handled by view.js, but CSS backup)
+    .book-viewer__pages,
+    .book-viewer__page--front,
+    .book-viewer__page--back {
+        // JS will hide these, but fallback
+    }
+}
+
+// StPageFlip container
+.book-viewer__flipbook {
+    margin: 0 auto;
+}
+
+// Individual flip page - no padding by default
+.book-viewer__flip-page {
+    background: var(--book-padding-color, var(--book-page-bg));
+    overflow: hidden;
+    box-sizing: border-box;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        display: block;
+        background: var(--book-page-bg);
+    }
+    .book-viewer__blank {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient( 135deg, #fafafa 25%, #f5f5f5 25%, #f5f5f5 50%, #fafafa 50%, #fafafa 75%, #f5f5f5 75%);
+        background-size: 20px 20px;
+    }
+}
+
+// Desktop: Left page - padding LEFT/TOP/BOTTOM only
+.stf__item.--left .book-viewer__flip-page {
+    padding: var(--book-page-padding) 0 var(--book-page-padding) var(--book-page-padding);
+}
+
+// Desktop: Right page - padding RIGHT/TOP/BOTTOM only
+.stf__item.--right .book-viewer__flip-page {
+    padding: var(--book-page-padding) var(--book-page-padding) var(--book-page-padding) 0;
+}
+
+// Mobile single view: full padding all sides
+.stf__wrapper.--portrait .book-viewer__flip-page {
+    padding: var(--book-page-padding);
+}
+
+// Cover pages (shown solo) - full padding all around
+.stf__item.--hard .book-viewer__flip-page {
+    padding: var(--book-page-padding);
+}
+
+// StPageFlip library overrides - use padding color for backgrounds
+.stf__wrapper {
+    margin: 0 auto;
+    overflow: visible !important;
+    background: transparent !important;
+}
+
+.stf__parent {
+    display: flex;
+    justify-content: center;
+    overflow: visible !important;
+    background: transparent !important;
+}
+
+.stf__block {
+    overflow: visible !important;
+    background: transparent !important;
+}
+
+// StPageFlip page items
+.stf__item {
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    img {
+        margin: 0 !important;
+        object-fit: contain !important;
+        object-position: center !important;
+    }
+}
+
+// Screen reader text (for accessibility)
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+// Wide and full alignments
+.book-viewer.alignwide {
+    max-width: 1200px;
+}
+
+.book-viewer.alignfull {
+    max-width: none;
+    width: 100%;
+    .book-viewer__book {
+        border-radius: 0;
+    }
+}
+
+// =====================
+// TOP TOOLBAR (above magazine)
+// =====================
+.book-viewer__toolbar {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--book-padding-color, var(--book-bg));
+    border-radius: 8px 8px 0 0;
+}
+
+.book-viewer--initialized .book-viewer__toolbar {
+    display: flex;
+}
+
+.book-viewer__toolbar-indicator {
+    font-size: 14px;
+    color: var(--book-nav-color, #fff);
+    font-weight: 500;
+}
+
+.book-viewer__fullscreen-btn {
+    width: 40px;
+    height: 40px;
+    background: var(--book-nav-bg);
+    border: none;
+    border-radius: 50%;
+    color: var(--book-nav-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    &:hover {
+        background: rgba(0, 0, 0, 0.9);
+        transform: scale(1.1);
+    }
+    &:focus {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+    }
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+    .book-viewer__fullscreen-icon--exit {
+        display: none;
+    }
+}
+
+// Hide old indicator when toolbar is shown
+.book-viewer--initialized .book-viewer__indicator {
+    display: none !important;
+}
+
+// Fullscreen mode
+.book-viewer--fullscreen {
+    background: #000;
+    .book-viewer__toolbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        border-radius: 0;
+        background: rgba(0, 0, 0, 0.8);
+    }
+    .book-viewer__fullscreen-btn {
+        .book-viewer__fullscreen-icon--enter {
+            display: none;
+        }
+        .book-viewer__fullscreen-icon--exit {
+            display: block;
+        }
+    }
+    .book-viewer__book {
+        height: calc(100vh - 64px);
+        margin-top: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+// =====================
+// ZOOM BUTTON OVERLAY (on hover)
+// =====================
+.book-viewer__zoom-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: var(--book-nav-bg);
+    border: none;
+    border-radius: 50%;
+    color: var(--book-nav-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 5;
+    pointer-events: none;
+    svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+// Show zoom button on page hover (not in fullscreen)
+.book-viewer:not(.book-viewer--fullscreen) {
+    .book-viewer__flip-page:hover .book-viewer__zoom-btn {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .book-viewer__zoom-btn:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+        background: rgba(0, 0, 0, 0.9);
+    }
+}
+
+// =====================
+// ZOOM MODAL
+// =====================
+.book-viewer-zoom-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999;
+    &--open {
+        display: block;
+    }
+}
+
+.book-viewer-zoom-modal__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+}
+
+.book-viewer-zoom-modal__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.book-viewer-zoom-modal__image {
+    max-width: 85vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.book-viewer-zoom-modal__close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    &:hover {
+        background: #000;
+        transform: scale(1.1);
+    }
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+}

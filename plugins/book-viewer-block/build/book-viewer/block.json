@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "book-viewer/book-viewer",
+  "version": "1.0.0",
+  "title": "Book Viewer",
+  "category": "media",
+  "icon": "book",
+  "description": "Display images as a flipable book with page-turn effects.",
+  "keywords": [
+    "book",
+    "flipbook",
+    "magazine",
+    "pages",
+    "gallery"
+  ],
+  "attributes": {
+    "pages": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object"
+      }
+    },
+    "frontCover": {
+      "type": "object",
+      "default": null
+    },
+    "backCover": {
+      "type": "object",
+      "default": null
+    },
+    "blankPages": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "number"
+      }
+    },
+    "pageWidth": {
+      "type": "number",
+      "default": 400
+    },
+    "pageHeight": {
+      "type": "number",
+      "default": 600
+    },
+    "paddingColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "anchor": true
+  },
+  "textdomain": "book-viewer-block",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "viewScript": "file:./view.js",
+  "style": "file:./style-index.css"
+}
