@@ -18,9 +18,7 @@ languages/*
 # !themes/twentyseventeen
 #
 plugins/*
-
-# Parser plugin is NOT tracked (temporary, will be deleted after import)
-plugins/saggy-pants-importer
+!plugins/book-viewer-block
 
 */node_modules/*
 
@@ -29,11 +27,11 @@ plugins/saggy-pants-importer
 mu-plugins/*
 !mu-plugins/mu-loader.php
 !mu-plugins/tobacco-archive
-!mu-plugins/saggy-pants-archive
+# !mu-plugins/saggy-pants-archive
 
 # Exclude the source HTML files from saggy-pants-archive
-mu-plugins/saggy-pants-archive/Saggy-Pants*
-mu-plugins/saggy-pants-archive/Saggy-Pants 09/
+# mu-plugins/saggy-pants-archive/Saggy-Pants*
+# mu-plugins/saggy-pants-archive/Saggy-Pants 09/
 
 # Exclude import temp directory
 import_temp/
