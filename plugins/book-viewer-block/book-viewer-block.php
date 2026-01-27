@@ -34,31 +34,47 @@ define( 'BOOK_VIEWER_PLUGIN_DIR', untrailingslashit( plugin_dir_path( __FILE__ )
 define( 'BOOK_VIEWER_PLUGIN_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
 
 /**
- * Register the block.
+ * Register StPageFlip library early.
+ */
+function register_stpageflip() {
+	wp_register_script(
+		'stpageflip',
+		'https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js',
+		array(),
+		'2.0.7',
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_stpageflip', 1 );
+
+/**
+ * Register the block with StPageFlip as view script dependency.
  */
 function register_block() {
-	register_block_type( BOOK_VIEWER_PLUGIN_DIR . '/build/book-viewer' );
+	// Ensure stpageflip is registered first
+	if ( ! wp_script_is( 'stpageflip', 'registered' ) ) {
+		register_stpageflip();
+	}
+
+	register_block_type(
+		BOOK_VIEWER_PLUGIN_DIR . '/build/book-viewer',
+		array(
+			'view_script_handles' => array( 'stpageflip' ),
+		)
+	);
 }
 add_action( 'init', __NAMESPACE__ . '\register_block' );
 
 /**
- * Enqueue the StPageFlip library from CDN for the frontend.
+ * Fallback: ensure StPageFlip loads when block is on page.
  */
-function enqueue_vendor_scripts() {
+function ensure_stpageflip_loaded() {
 	if ( is_admin() ) {
 		return;
 	}
 
-	// Only enqueue if the block is present on the page.
 	if ( has_block( 'book-viewer/book-viewer' ) ) {
-		wp_enqueue_script(
-			'stpageflip',
-			'https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js',
-			array(),
-			'2.0.7',
-			true
-		);
+		wp_enqueue_script( 'stpageflip' );
 	}
 }
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_vendor_scripts' );
-
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\ensure_stpageflip_loaded', 20 );

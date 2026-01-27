@@ -19,6 +19,7 @@ languages/*
 #
 plugins/*
 !plugins/book-viewer-block
+!plugins/jukebox
 
 **/node_modules/
 

@@ -366,17 +366,23 @@
     display: none !important;
 }
 
-// Fullscreen mode
+// Fullscreen mode (CSS-based modal)
 .book-viewer--fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 998;
     background: #000;
+    display: flex;
+    flex-direction: column;
     .book-viewer__toolbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
+        position: relative;
         z-index: 100;
         border-radius: 0;
         background: rgba(0, 0, 0, 0.8);
+        flex-shrink: 0;
     }
     .book-viewer__fullscreen-btn {
         .book-viewer__fullscreen-icon--enter {
@@ -387,11 +393,26 @@
         }
     }
     .book-viewer__book {
-        height: calc(100vh - 64px);
-        margin-top: 64px;
+        flex: 1;
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .book-viewer__flipbook {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .stf__wrapper {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: calc(100vh - 100px) !important;
     }
 }
 
@@ -423,15 +444,30 @@
     }
 }
 
-// Show zoom button on page hover (not in fullscreen)
-.book-viewer:not(.book-viewer--fullscreen) {
-    .book-viewer__flip-page:hover .book-viewer__zoom-btn {
-        opacity: 1;
+// Show zoom button on page hover
+.book-viewer__flip-page:hover .book-viewer__zoom-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.book-viewer__zoom-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+// On mobile, always show zoom button (pinch-to-zoom blocked by StPageFlip)
+@media (max-width: 767px) {
+    .book-viewer__zoom-btn {
+        opacity: 0.9;
         pointer-events: auto;
-    }
-    .book-viewer__zoom-btn:hover {
-        transform: translate(-50%, -50%) scale(1.1);
-        background: rgba(0, 0, 0, 0.9);
+        width: 56px;
+        height: 56px;
+        z-index: 50; // Above StPageFlip touch layer (relative to container)
+        touch-action: manipulation; // Prevent double-tap zoom delay
+        svg {
+            width: 28px;
+            height: 28px;
+        }
     }
 }
 
@@ -445,7 +481,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 999999;
+    z-index: 999; // Above fullscreen viewer (998)
     &--open {
         display: block;
     }

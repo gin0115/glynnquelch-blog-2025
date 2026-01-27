@@ -4,6 +4,12 @@
 import { registerBlockType } from '@wordpress/blocks';
 
 /**
+ * Styles
+ */
+import './style.scss';
+import './editor.scss';
+
+/**
  * Internal dependencies
  */
 import Edit from './edit';
@@ -11,18 +17,11 @@ import save from './save';
 import metadata from './block.json';
 
 /**
- * Style dependencies
- */
-import './style.scss';
-import './editor.scss';
-
-/**
- * Register the block.
+ * Register the block
  */
 registerBlockType( metadata.name, {
+	...metadata,
 	edit: Edit,
 	save,
 } );
-
-
 

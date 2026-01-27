@@ -53,6 +53,8 @@ function openZoomModal( imgSrc, imgAlt ) {
 	const img = modal.querySelector( '.book-viewer-zoom-modal__image' );
 	img.src = imgSrc;
 	img.alt = imgAlt || '';
+	
+	
 	modal.classList.add( 'book-viewer-zoom-modal--open' );
 	document.body.style.overflow = 'hidden';
 }
@@ -69,16 +71,10 @@ function closeZoomModal() {
 }
 
 /**
- * Toggle fullscreen mode
+ * Toggle fullscreen mode (CSS-based, not native Fullscreen API)
  */
 function toggleFullscreen( container ) {
-	if ( document.fullscreenElement === container ) {
-		document.exitFullscreen();
-	} else {
-		container.requestFullscreen().catch( ( err ) => {
-			console.warn( 'Fullscreen request failed:', err );
-		} );
-	}
+	container.classList.toggle( 'book-viewer--fullscreen' );
 }
 
 /**
@@ -106,23 +102,30 @@ function initBookViewer( container ) {
 	const innerPages = book.querySelectorAll( '.book-viewer__page--inner:not(.book-viewer__page--auto-blank)' );
 	const autoBlank = book.querySelector( '.book-viewer__page--auto-blank' );
 
+	// Determine if mobile (single page mode) - use 768px breakpoint
+	const checkIfMobile = () => window.innerWidth < 768;
+	let isMobile = checkIfMobile();
+
 	// Build pages array in correct order
 	const allPages = [];
 	if ( frontCover ) allPages.push( frontCover );
 	innerPages.forEach( ( page ) => allPages.push( page ) );
 
-	// Add auto-blank if needed for even page count
-	const totalWithoutBack = allPages.length;
-	const needsBlank = totalWithoutBack % 2 !== 0;
+	// Only add auto-blank on desktop if inner pages are odd
+	// Covers stand alone, only inner pages need to be even for 2-up spreads
+	if ( ! isMobile ) {
+		const innerPageCount = innerPages.length;
+		const needsBlank = innerPageCount % 2 !== 0;
 
-	if ( needsBlank ) {
-		if ( autoBlank ) {
-			allPages.push( autoBlank );
-		} else {
-			const blankPage = document.createElement( 'div' );
-			blankPage.className = 'book-viewer__page book-viewer__page--inner book-viewer__page--blank book-viewer__page--auto-blank';
-			blankPage.innerHTML = '<div class="book-viewer__blank"></div>';
-			allPages.push( blankPage );
+		if ( needsBlank ) {
+			if ( autoBlank ) {
+				allPages.push( autoBlank );
+			} else {
+				const blankPage = document.createElement( 'div' );
+				blankPage.className = 'book-viewer__page book-viewer__page--inner book-viewer__page--blank book-viewer__page--auto-blank';
+				blankPage.innerHTML = '<div class="book-viewer__blank"></div>';
+				allPages.push( blankPage );
+			}
 		}
 	}
 
@@ -156,10 +159,6 @@ function initBookViewer( container ) {
 	const flipContainer = document.createElement( 'div' );
 	flipContainer.className = 'book-viewer__flipbook';
 	book.appendChild( flipContainer );
-
-	// Determine if mobile (single page mode)
-	const checkIfMobile = () => window.innerWidth < 768;
-	let isMobile = checkIfMobile();
 
 	// Initialize PageFlip
 	let pageFlip = new window.St.PageFlip( flipContainer, {
@@ -210,13 +209,32 @@ function initBookViewer( container ) {
 					<path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z" fill="currentColor"/>
 				</svg>
 			`;
-			zoomBtn.addEventListener( 'click', ( e ) => {
+			
+			const imgSrc = img.src;
+			const imgAlt = img.alt || '';
+			
+			// Direct handlers - stop ALL events
+			const stopAll = ( e ) => {
 				e.stopPropagation();
-				// Only zoom if not in fullscreen
-				if ( document.fullscreenElement !== container ) {
-					openZoomModal( img.src, img.alt );
-				}
-			} );
+				e.stopImmediatePropagation();
+				e.preventDefault();
+				return false;
+			};
+			
+			const doZoom = ( e ) => {
+				stopAll( e );
+				openZoomModal( imgSrc, imgAlt );
+				return false;
+			};
+			
+			zoomBtn.onmousedown = stopAll;
+			zoomBtn.onmouseup = doZoom;
+			zoomBtn.onclick = doZoom;
+			zoomBtn.ontouchstart = stopAll;
+			zoomBtn.ontouchend = doZoom;
+			zoomBtn.onpointerdown = stopAll;
+			zoomBtn.onpointerup = doZoom;
+			
 			pageEl.appendChild( zoomBtn );
 		}
 
@@ -224,6 +242,7 @@ function initBookViewer( container ) {
 	} );
 
 	pageFlip.loadFromHTML( pageElements );
+
 
 	// Hide the fallback content
 	const pagesContainer = book.querySelector( '.book-viewer__pages' );
@@ -239,18 +258,12 @@ function initBookViewer( container ) {
 	const fullscreenBtn = toolbar.querySelector( '.book-viewer__fullscreen-btn' );
 	fullscreenBtn.addEventListener( 'click', () => {
 		toggleFullscreen( container );
+		// Give CSS time to apply, then update PageFlip size
+		setTimeout( () => {
+			pageFlip.update();
+		}, 50 );
 	} );
 
-	// Handle fullscreen change
-	document.addEventListener( 'fullscreenchange', () => {
-		if ( document.fullscreenElement === container ) {
-			container.classList.add( 'book-viewer--fullscreen' );
-			pageFlip.update();
-		} else {
-			container.classList.remove( 'book-viewer--fullscreen' );
-			pageFlip.update();
-		}
-	} );
 
 	// Navigation buttons
 	const prevBtn = container.querySelector( '.book-viewer__nav-btn--prev' );
@@ -346,22 +359,47 @@ function initAllBookViewers() {
 				} );
 			},
 			{
-				rootMargin: '100px 0px',
-				threshold: 0.1,
+				rootMargin: '200px 0px', // Increased for mobile
+				threshold: 0,
 			}
 		);
 
 		bookViewers.forEach( ( viewer ) => {
 			observer.observe( viewer );
 		} );
+
+		// Fallback: if still not initialized after 3 seconds, force init
+		setTimeout( () => {
+			document.querySelectorAll( '.book-viewer:not(.book-viewer--initialized)' ).forEach( ( viewer ) => {
+				observer.unobserve( viewer );
+				initBookViewer( viewer );
+			} );
+		}, 3000 );
 	} else {
+		// No IntersectionObserver, init immediately
 		bookViewers.forEach( initBookViewer );
 	}
 }
 
-// Initialize when DOM is ready
+/**
+ * Wait for StPageFlip to be available, then initialize.
+ */
+function waitForStPageFlip( callback, attempts = 0 ) {
+	if ( typeof window.St !== 'undefined' && typeof window.St.PageFlip !== 'undefined' ) {
+		callback();
+	} else if ( attempts < 50 ) {
+		// Retry up to 50 times (5 seconds total)
+		setTimeout( () => waitForStPageFlip( callback, attempts + 1 ), 100 );
+	} else {
+		console.warn( 'Book Viewer: StPageFlip library failed to load after 5 seconds.' );
+	}
+}
+
+// Initialize when DOM is ready and StPageFlip is available
 if ( document.readyState === 'loading' ) {
-	document.addEventListener( 'DOMContentLoaded', initAllBookViewers );
+	document.addEventListener( 'DOMContentLoaded', () => {
+		waitForStPageFlip( initAllBookViewers );
+	} );
 } else {
-	initAllBookViewers();
+	waitForStPageFlip( initAllBookViewers );
 }
