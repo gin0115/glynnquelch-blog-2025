@@ -5,14 +5,8 @@ namespace SaggyPants;
 class JukeboxUpdater {
 
     public static function init(): void {
-        // AJAX handler for frontend button
+        // AJAX handler (for admin use only)
         add_action('wp_ajax_saggy_pants_refresh', [self::class, 'ajaxRefresh']);
-
-        // Add refresh button to jukebox post
-        add_filter('the_content', [self::class, 'addRefreshButton'], 999);
-
-        // Enqueue styles
-        add_action('wp_enqueue_scripts', [self::class, 'enqueueAssets']);
     }
 
     /**
