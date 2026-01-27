@@ -34,6 +34,7 @@ mu-plugins/saggy-pants-archive/Saggy-Pants*
 mu-plugins/saggy-pants-archive/Saggy-Pants 09/
 mu-plugins/saggy-pants-archive/audio/
 mu-plugins/saggy-pants-archive/gid/
+mu-plugins/saggy-pants-archive/temp_prcessing/
 
 # Exclude import temp directory
 import_temp/
