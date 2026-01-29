@@ -128,7 +128,13 @@ class PlaylistGenerator {
      * Get ONE jukebox block with ALL tracks
      */
     public function getJukeboxBlock(): string {
-        $blockId = 'jukebox-' . substr(md5(uniqid()), 0, 8);
+        return $this->getJukeboxBlockWithAttrs([]);
+    }
+
+    /**
+     * Get jukebox block preserving existing attributes (colors, styles, etc.)
+     */
+    public function getJukeboxBlockWithAttrs(array $existingAttrs): string {
         $trackList = [];
 
         foreach ($this->tracks as $i => $t) {
@@ -143,7 +149,18 @@ class PlaylistGenerator {
             ];
         }
 
-        $json = json_encode(['blockId' => $blockId, 'tracks' => $trackList], JSON_UNESCAPED_SLASHES);
+        // Start with existing attributes (preserves colors, settings, etc.)
+        $attrs = $existingAttrs;
+        
+        // Generate new blockId if not present
+        if (empty($attrs['blockId'])) {
+            $attrs['blockId'] = 'jukebox-' . substr(md5(uniqid()), 0, 8);
+        }
+        
+        // Update tracks with new data
+        $attrs['tracks'] = $trackList;
+
+        $json = json_encode($attrs, JSON_UNESCAPED_SLASHES);
         return "<!-- wp:pinkcrab/jukebox {$json} /-->";
     }
 

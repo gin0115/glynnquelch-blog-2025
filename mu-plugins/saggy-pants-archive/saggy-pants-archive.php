@@ -173,11 +173,12 @@ function saggy_pants_archive_set_archive_sort_order( $query ) {
 		$query->set( 'order', 'DESC' );
 	}
 
-	// Ensure taxonomy archives query the correct post type
+	// Ensure taxonomy archives query the correct post type - alphabetical order, 12 per page
 	if ( is_tax( 'sp-band' ) || is_tax( 'archive-type' ) ) {
 		$query->set( 'post_type', 'sp-archive' );
-		$query->set( 'orderby', 'date' );
-		$query->set( 'order', 'DESC' );
+		$query->set( 'orderby', 'title' );
+		$query->set( 'order', 'ASC' );
+		$query->set( 'posts_per_page', 12 );
 	}
 
 	// Ensure tag archives only show sp-archive posts

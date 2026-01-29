@@ -119,10 +119,10 @@ do_action( 'yuki_action_before_single_post_container' );
 								// Single band - show "More from Band Name" as link to band term, with related posts
 								$band = $bands[0];
 								
-								// Get other posts with this band (excluding current post, max 2)
+								// Get other posts with this band (excluding current post)
 								$related_posts = get_posts( array(
 									'post_type'      => 'sp-archive',
-									'posts_per_page' => 2,
+									'posts_per_page' => -1,
 									'post__not_in'   => array( get_the_ID() ),
 									'tax_query'      => array(
 										array(
