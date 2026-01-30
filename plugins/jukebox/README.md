@@ -109,4 +109,3 @@ All output is properly escaped:
 
 GPL-2.0-or-later
 
-

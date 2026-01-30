@@ -181,11 +181,12 @@ function saggy_pants_archive_set_archive_sort_order( $query ) {
 		$query->set( 'posts_per_page', 12 );
 	}
 
-	// Ensure tag archives only show sp-archive posts
+	// Ensure tag archives only show sp-archive posts - alphabetical order, 12 per page
 	if ( is_tag() ) {
 		$query->set( 'post_type', 'sp-archive' );
-		$query->set( 'orderby', 'date' );
-		$query->set( 'order', 'DESC' );
+		$query->set( 'orderby', 'title' );
+		$query->set( 'order', 'ASC' );
+		$query->set( 'posts_per_page', 12 );
 	}
 }
 add_action( 'pre_get_posts', __NAMESPACE__ . '\saggy_pants_archive_set_archive_sort_order' );

@@ -82,3 +82,4 @@ echo "Gallery and image blocks updated in $INPUT_FILE"
 echo "Backup saved as ${INPUT_FILE}.backup"
 
 
+

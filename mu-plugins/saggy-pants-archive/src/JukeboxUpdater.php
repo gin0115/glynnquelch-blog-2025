@@ -81,7 +81,11 @@ class JukeboxUpdater {
             
             // Merge: keep existing colors/styles, update tracks
             $newJukeboxBlock = $generator->getJukeboxBlockWithAttrs($existingAttrs);
-            
+        }
+
+        $pattern = '/<!-- wp:pinkcrab\/jukebox \{.*?\} \/-->/s';
+
+        if (preg_match($pattern, $content)) {
             // Replace existing jukebox
             $newContent = preg_replace($pattern, $newJukeboxBlock, $content, 1);
             $action = 'replaced';

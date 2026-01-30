@@ -55,8 +55,8 @@ add_action( 'init', __NAMESPACE__ . '\register_block' );
  */
 function render_jukebox_block( $attributes, $content ) {
 	// Sanitize attributes
-	$tracks = isset( $attributes['tracks'] ) && is_array( $attributes['tracks'] ) 
-		? array_map( __NAMESPACE__ . '\sanitize_track', $attributes['tracks'] ) 
+	$tracks = isset( $attributes['tracks'] ) && is_array( $attributes['tracks'] )
+		? array_map( __NAMESPACE__ . '\sanitize_track', $attributes['tracks'] )
 		: array();
 
 	if ( empty( $tracks ) ) {
@@ -65,13 +65,13 @@ function render_jukebox_block( $attributes, $content ) {
 
 	// Color attributes with defaults
 	$colors = array(
-		'backgroundColor'     => isset( $attributes['backgroundColor'] ) ? sanitize_text_field( $attributes['backgroundColor'] ) : '#1a1a2e',
-		'primaryColor'        => isset( $attributes['primaryColor'] ) ? sanitize_text_field( $attributes['primaryColor'] ) : '#e94560',
-		'secondaryColor'      => isset( $attributes['secondaryColor'] ) ? sanitize_text_field( $attributes['secondaryColor'] ) : '#16213e',
-		'textColor'           => isset( $attributes['textColor'] ) ? sanitize_text_field( $attributes['textColor'] ) : '#ffffff',
-		'textMutedColor'      => isset( $attributes['textMutedColor'] ) ? sanitize_text_field( $attributes['textMutedColor'] ) : '#a0a0a0',
-		'progressBackground'  => isset( $attributes['progressBackground'] ) ? sanitize_text_field( $attributes['progressBackground'] ) : '#2d2d44',
-		'controlHoverColor'   => isset( $attributes['controlHoverColor'] ) ? sanitize_text_field( $attributes['controlHoverColor'] ) : '#ff6b6b',
+		'backgroundColor'    => isset( $attributes['backgroundColor'] ) ? sanitize_text_field( $attributes['backgroundColor'] ) : '#1a1a2e',
+		'primaryColor'       => isset( $attributes['primaryColor'] ) ? sanitize_text_field( $attributes['primaryColor'] ) : '#e94560',
+		'secondaryColor'     => isset( $attributes['secondaryColor'] ) ? sanitize_text_field( $attributes['secondaryColor'] ) : '#16213e',
+		'textColor'          => isset( $attributes['textColor'] ) ? sanitize_text_field( $attributes['textColor'] ) : '#ffffff',
+		'textMutedColor'     => isset( $attributes['textMutedColor'] ) ? sanitize_text_field( $attributes['textMutedColor'] ) : '#a0a0a0',
+		'progressBackground' => isset( $attributes['progressBackground'] ) ? sanitize_text_field( $attributes['progressBackground'] ) : '#2d2d44',
+		'controlHoverColor'  => isset( $attributes['controlHoverColor'] ) ? sanitize_text_field( $attributes['controlHoverColor'] ) : '#ff6b6b',
 	);
 
 	// Other settings
