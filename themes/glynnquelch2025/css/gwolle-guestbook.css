@@ -1,0 +1,396 @@
+/**
+ * Gwolle Guestbook Theme Styles
+ * 
+ * Based on .yuki-comments-area styling patterns
+ * NO border-radius, NO card-within-card
+ * 
+ * @package GlynnQuelch2025
+ */
+
+
+/* =================================================================
+   Main Container - the ONLY bordered element
+   ================================================================= */
+
+.gwolle-gb {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--yuki-accent-color);
+    border-top: 1px dashed var(--yuki-base-300);
+    border-bottom: 1px dashed var(--yuki-base-300);
+    padding: 24px 0;
+    margin-top: 36px;
+    margin-bottom: 36px;
+}
+
+
+/* =================================================================
+   Write Button - full width, centered
+   ================================================================= */
+
+.gwolle-gb-write-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.gwolle-gb-write-button input[type="button"] {
+    display: block;
+    width: 100%;
+    background: var(--yuki-primary-color);
+    color: var(--yuki-base-color);
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+}
+
+.gwolle-gb-write-button input[type="button"]:hover {
+    background: var(--yuki-primary-active);
+}
+
+
+/* =================================================================
+   Form Container - has bottom border to separate from entries
+   ================================================================= */
+
+.gwolle-gb-write {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 0 0 24px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--yuki-base-200);
+    margin-bottom: 24px;
+}
+
+
+/* Ensure all form children stack vertically */
+
+.gwolle-gb-write>* {
+    display: block;
+    width: 100%;
+}
+
+
+/* Override any float styling from plugin */
+
+.gwolle-gb .gwolle-gb-float,
+.gwolle-gb .gwolle-gb-float div.input,
+.gwolle-gb .gwolle-gb-float div.label {
+    float: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
+/* Field rows */
+
+.gwolle-gb-write>div {
+    display: block;
+    margin-bottom: 0;
+}
+
+.gwolle-gb-write .label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.gwolle-gb-write .input {
+    display: block;
+    width: 100%;
+}
+
+
+/* Form title - matches .yuki-heading-style-1 */
+
+.gwolle-gb-write h3 {
+    position: relative;
+    border-bottom: 1px solid var(--yuki-base-200);
+    padding-bottom: 8px;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.gwolle-gb-write h3::after {
+    content: "";
+    display: block;
+    width: 3em;
+    height: 4px;
+    background: var(--yuki-primary-color);
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+}
+
+
+/* Close button */
+
+.gwolle-gb-write .gb-notice-dismiss {
+    background: transparent;
+    border: none;
+    color: var(--yuki-accent-color);
+    cursor: pointer;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    opacity: 0.7;
+    transition: all 0.25s ease;
+}
+
+.gwolle-gb-write .gb-notice-dismiss:hover {
+    color: var(--yuki-primary-color);
+    opacity: 1;
+}
+
+
+/* =================================================================
+   Form Fields
+   ================================================================= */
+
+.gwolle-gb .label label {
+    display: block;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.85;
+}
+
+.gwolle-gb .label label .required {
+    color: #dd0000;
+}
+
+.gwolle-gb input[type="text"],
+.gwolle-gb input[type="email"],
+.gwolle-gb input[type="url"],
+.gwolle-gb textarea {
+    width: 100%;
+    border: 1px solid var(--yuki-form-border-color, var(--yuki-base-300));
+    background: var(--yuki-form-background-color, var(--yuki-base-100));
+    color: var(--yuki-accent-color);
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: inherit;
+    transition: border-color 0.25s ease;
+}
+
+.gwolle-gb input[type="text"]:focus,
+.gwolle-gb input[type="email"]:focus,
+.gwolle-gb input[type="url"]:focus,
+.gwolle-gb textarea:focus {
+    outline: none;
+    border-color: var(--yuki-form-active-color, var(--yuki-primary-color));
+}
+
+.gwolle-gb textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.gwolle-gb .input {
+    margin-bottom: 24px;
+}
+
+.gwolle-gb .clearBoth {
+    display: none;
+}
+
+
+/* =================================================================
+   Submit Button
+   ================================================================= */
+
+.gwolle_gb_submit {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.gwolle_gb_submit .label {
+    display: none;
+}
+
+.gwolle_gb_submit .input {
+    display: block;
+}
+
+.gwolle_gb_submit input[type="submit"] {
+    background: var(--yuki-primary-color);
+    color: var(--yuki-base-color);
+    border: none;
+    padding: 10px 36px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.gwolle_gb_submit input[type="submit"]:hover {
+    background: var(--yuki-primary-active);
+}
+
+
+/* =================================================================
+   Notice - must be below form
+   ================================================================= */
+
+.gwolle_gb_notice {
+    display: block;
+    width: 100%;
+    clear: both;
+    font-size: 0.875rem;
+    opacity: 0.7;
+    margin-top: 24px;
+}
+
+
+/* =================================================================
+   Entries List
+   ================================================================= */
+
+.gwolle-gb .gwolle-gb-read {
+    margin-top: 30px;
+}
+
+.gwolle-gb-entries-list {
+    margin-top: 0;
+}
+
+.gwolle-gb .gwolle-gb-total {
+    color: var(--yuki-primary-color);
+}
+
+
+/* Individual entry - just more space */
+
+.gwolle-gb .gb-entry {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--yuki-base-200);
+}
+
+.gwolle-gb .gb-entry:first-of-type {
+    padding-top: 0;
+}
+
+.gwolle-gb .gb-entry:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+
+/* Hide avatars */
+
+.gwolle-gb .gb-author-avatar {
+    display: none;
+}
+
+
+/* Author info */
+
+.gwolle-gb .gb-author-info {
+    margin-bottom: 16px;
+}
+
+
+/* Author name */
+
+.gwolle-gb .gb-author-name {
+    display: inline;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.gwolle-gb .gb-author-name a {
+    color: var(--yuki-primary-color);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.gwolle-gb .gb-author-name a:hover {
+    color: var(--yuki-primary-active);
+}
+
+.gwolle-gb .gb-moderator {
+    font-style: normal;
+}
+
+
+/* Origin and datetime */
+
+.gwolle-gb .gb-author-origin,
+.gwolle-gb .gb-datetime {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+
+/* Entry content */
+
+.gwolle-gb .gb-entry-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
+
+/* Admin reply */
+
+.gwolle-gb .gb-admin-reply {
+    margin-top: 12px;
+    padding-left: 12px;
+    border-left: 3px solid var(--yuki-primary-color);
+    font-size: 0.875rem;
+}
+
+
+/* =================================================================
+   Messages
+   ================================================================= */
+
+.gwolle-gb-messages-top-container,
+.gwolle-gb-messages-bottom-container {
+    margin-bottom: 12px;
+}
+
+
+/* =================================================================
+   Pagination
+   ================================================================= */
+
+.gwolle-gb-navigation {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.gwolle-gb-navigation a,
+.gwolle-gb-navigation span {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    color: var(--yuki-accent-color);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.gwolle-gb-navigation a:hover {
+    color: var(--yuki-primary-color);
+}
+
+.gwolle-gb-navigation .current {
+    color: var(--yuki-primary-color);
+    font-weight: 600;
+}
+
+
+/* =================================================================
+   No JS Warning
+   ================================================================= */
+
+.gwolle-gb .no-js {
+    padding: 12px;
+    margin-bottom: 12px;
+    background: var(--yuki-base-100);
+}

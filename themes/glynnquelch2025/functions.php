@@ -128,6 +128,44 @@ function glynnquelch2025_enqueue_sp_archive_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'glynnquelch2025_enqueue_sp_archive_styles' );
 
+/**
+ * Enqueue equalise grid JS and CSS
+ * 
+ * Provides row height equalization for grids with .equalise class.
+ */
+function glynnquelch2025_enqueue_equalise_grid() {
+	wp_enqueue_style(
+		'glynnquelch2025-equalise-grid',
+		get_stylesheet_directory_uri() . '/css/equalise-grid.css',
+		array(),
+		GQ2025_VERSION
+	);
+
+	wp_enqueue_script(
+		'glynnquelch2025-equalise-grid',
+		get_stylesheet_directory_uri() . '/assets/js/equalise-grid.js',
+		array(),
+		GQ2025_VERSION,
+		true // Load in footer
+	);
+}
+add_action( 'wp_enqueue_scripts', 'glynnquelch2025_enqueue_equalise_grid' );
+
+/**
+ * Enqueue Gwolle Guestbook theme styles
+ * 
+ * Applies theme form styling to the Gwolle Guestbook plugin.
+ */
+function glynnquelch2025_enqueue_gwolle_styles() {
+	wp_enqueue_style(
+		'glynnquelch2025-gwolle-guestbook',
+		get_stylesheet_directory_uri() . '/css/gwolle-guestbook.css',
+		array(),
+		GQ2025_VERSION
+	);
+}
+add_action( 'wp_enqueue_scripts', 'glynnquelch2025_enqueue_gwolle_styles' );
+
 // Require customizer options.
 require_once GQ2025_PATH . 'customizer.php';
 // Require starter content options.

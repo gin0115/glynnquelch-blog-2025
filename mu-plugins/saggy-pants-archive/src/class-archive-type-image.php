@@ -235,6 +235,11 @@ class Archive_Type_Image {
 			return $value;
 		}
 
+		// Don't apply fallback in admin - we want to see the actual state.
+		if ( is_admin() ) {
+			return $value;
+		}
+
 		// Only for sp-archive post type.
 		if ( 'sp-archive' !== get_post_type( $object_id ) ) {
 			return $value;
@@ -279,6 +284,11 @@ class Archive_Type_Image {
 	public static function fallback_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
 		// If there's already HTML, return it.
 		if ( $html ) {
+			return $html;
+		}
+
+		// Don't apply fallback in admin - we want to see the actual state.
+		if ( is_admin() ) {
 			return $html;
 		}
 

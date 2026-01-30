@@ -129,6 +129,7 @@ class Jukebox {
 		this.queueToggle = this.container.querySelector( '.jukebox__queue-toggle' );
 		this.queueCount = this.container.querySelector( '.jukebox__queue-count' );
 		this.queueClear = this.container.querySelector( '.jukebox__queue-clear' );
+		this.queueClose = this.container.querySelector( '.jukebox__queue-close' );
 	}
 
 	/**
@@ -230,6 +231,11 @@ class Jukebox {
 		// Queue clear
 		if ( this.queueClear ) {
 			this.queueClear.addEventListener( 'click', () => this.clearQueue() );
+		}
+
+		// Queue close button
+		if ( this.queueClose ) {
+			this.queueClose.addEventListener( 'click', () => this.toggleQueuePanel() );
 		}
 
 		// Keyboard shortcuts

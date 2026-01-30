@@ -55,8 +55,8 @@ add_action( 'init', __NAMESPACE__ . '\register_block' );
  */
 function render_jukebox_block( $attributes, $content ) {
 	// Sanitize attributes
-	$tracks = isset( $attributes['tracks'] ) && is_array( $attributes['tracks'] ) 
-		? array_map( __NAMESPACE__ . '\sanitize_track', $attributes['tracks'] ) 
+	$tracks = isset( $attributes['tracks'] ) && is_array( $attributes['tracks'] )
+		? array_map( __NAMESPACE__ . '\sanitize_track', $attributes['tracks'] )
 		: array();
 
 	if ( empty( $tracks ) ) {
@@ -65,13 +65,13 @@ function render_jukebox_block( $attributes, $content ) {
 
 	// Color attributes with defaults
 	$colors = array(
-		'backgroundColor'     => isset( $attributes['backgroundColor'] ) ? sanitize_text_field( $attributes['backgroundColor'] ) : '#1a1a2e',
-		'primaryColor'        => isset( $attributes['primaryColor'] ) ? sanitize_text_field( $attributes['primaryColor'] ) : '#e94560',
-		'secondaryColor'      => isset( $attributes['secondaryColor'] ) ? sanitize_text_field( $attributes['secondaryColor'] ) : '#16213e',
-		'textColor'           => isset( $attributes['textColor'] ) ? sanitize_text_field( $attributes['textColor'] ) : '#ffffff',
-		'textMutedColor'      => isset( $attributes['textMutedColor'] ) ? sanitize_text_field( $attributes['textMutedColor'] ) : '#a0a0a0',
-		'progressBackground'  => isset( $attributes['progressBackground'] ) ? sanitize_text_field( $attributes['progressBackground'] ) : '#2d2d44',
-		'controlHoverColor'   => isset( $attributes['controlHoverColor'] ) ? sanitize_text_field( $attributes['controlHoverColor'] ) : '#ff6b6b',
+		'backgroundColor'    => isset( $attributes['backgroundColor'] ) ? sanitize_text_field( $attributes['backgroundColor'] ) : '#1a1a2e',
+		'primaryColor'       => isset( $attributes['primaryColor'] ) ? sanitize_text_field( $attributes['primaryColor'] ) : '#e94560',
+		'secondaryColor'     => isset( $attributes['secondaryColor'] ) ? sanitize_text_field( $attributes['secondaryColor'] ) : '#16213e',
+		'textColor'          => isset( $attributes['textColor'] ) ? sanitize_text_field( $attributes['textColor'] ) : '#ffffff',
+		'textMutedColor'     => isset( $attributes['textMutedColor'] ) ? sanitize_text_field( $attributes['textMutedColor'] ) : '#a0a0a0',
+		'progressBackground' => isset( $attributes['progressBackground'] ) ? sanitize_text_field( $attributes['progressBackground'] ) : '#2d2d44',
+		'controlHoverColor'  => isset( $attributes['controlHoverColor'] ) ? sanitize_text_field( $attributes['controlHoverColor'] ) : '#ff6b6b',
 	);
 
 	// Other settings
@@ -382,6 +382,15 @@ function render_jukebox_block( $attributes, $content ) {
 		<!-- Queue (always present, toggleable) -->
 		<div class="jukebox__queue jukebox__queue--hidden">
 			<div class="jukebox__queue-header">
+				<button 
+					type="button" 
+					class="jukebox__queue-close" 
+					aria-label="<?php esc_attr_e( 'Close queue', 'pinkcrab-jukebox' ); ?>"
+				>
+					<svg viewBox="0 0 24 24" fill="currentColor">
+						<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+					</svg>
+				</button>
 				<span class="jukebox__queue-title"><?php esc_html_e( 'Up Next', 'pinkcrab-jukebox' ); ?></span>
 				<button 
 					type="button" 

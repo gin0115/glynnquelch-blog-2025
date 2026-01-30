@@ -1,0 +1,129 @@
+/**
+ * Equalise Grid Styles
+ * 
+ * Layout for grids with .equalise class:
+ * - Text at bottom
+ * - Image centered vertically in remaining space
+ * - Both horizontally centered
+ * 
+ * Supports:
+ * 1. Query Loop: .wp-block-query.equalise
+ * 2. Group Grid: .wp-block-group.equalise.is-layout-grid
+ * 
+ * @package GlynnQuelch2025
+ */
+
+
+/* =================================================================
+   Query Loop Structure: .wp-block-query.equalise
+   ================================================================= */
+
+
+/* The inner group becomes a flex column */
+
+.wp-block-query.equalise .wp-block-post .wp-block-group {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+}
+
+
+/* Image container takes remaining space and centers the image */
+
+.wp-block-query.equalise .wp-block-post .wp-block-post-featured-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+
+/* Image itself - don't stretch, just center */
+
+.wp-block-query.equalise .wp-block-post .wp-block-post-featured-image a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wp-block-query.equalise .wp-block-post .wp-block-post-featured-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* Title stays at the bottom */
+
+.wp-block-query.equalise .wp-block-post .wp-block-post-title {
+    margin-top: auto;
+    text-align: center;
+}
+
+
+/* Center the title link */
+
+.wp-block-query.equalise .wp-block-post .wp-block-post-title a {
+    display: block;
+}
+
+
+/* =================================================================
+   Group Grid Structure: .wp-block-group.equalise.is-layout-grid
+   ================================================================= */
+
+
+/* Direct child groups become flex columns */
+
+.wp-block-group.equalise.is-layout-grid>.wp-block-group {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+}
+
+
+/* Image container takes remaining space and centers the image */
+
+.wp-block-group.equalise.is-layout-grid>.wp-block-group>.wp-block-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+
+/* Image link centers content */
+
+.wp-block-group.equalise.is-layout-grid>.wp-block-group>.wp-block-image a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Image itself - don't stretch, just center */
+
+.wp-block-group.equalise.is-layout-grid>.wp-block-group>.wp-block-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* Heading stays at the bottom */
+
+.wp-block-group.equalise.is-layout-grid>.wp-block-group>.wp-block-heading {
+    margin-top: auto;
+    text-align: center;
+}
+
+
+/* Center the heading link */
+
+.wp-block-group.equalise.is-layout-grid>.wp-block-group>.wp-block-heading a {
+    display: block;
+}

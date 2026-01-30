@@ -1,14 +1,202 @@
 /* Saggy Pants Archive Custom Styles */
 
 
-/* Paragraph spacing in post content */
+/* =================================================================
+   Entry Header
+   ================================================================= */
+
+body.single-sp-archive .entry-header {
+    margin-bottom: 35px;
+    font-size: 25px;
+}
+
+body.single-sp-archive h2.wp-block-heading {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+
+/* =================================================================
+   Link Styles - Only in main content area (not header/footer/to-top)
+   ================================================================= */
+
+body.single-sp-archive .yuki-article-content a,
+body.single-sp-archive .entry-content a,
+body.single-sp-archive .entry-footer a {
+    color: var(--yuki-primary-color);
+}
+
+body.single-sp-archive .yuki-article-content a:hover,
+body.single-sp-archive .entry-content a:hover,
+body.single-sp-archive .entry-footer a:hover {
+    color: var(--yuki-primary-active);
+}
+
+
+/* Headings that are links keep their heading color */
+
+body.single-sp-archive .yuki-article-content h1 a,
+body.single-sp-archive .yuki-article-content h2 a,
+body.single-sp-archive .yuki-article-content h3 a,
+body.single-sp-archive .yuki-article-content h4 a,
+body.single-sp-archive .yuki-article-content h5 a,
+body.single-sp-archive .yuki-article-content h6 a,
+body.single-sp-archive .entry-content h1 a,
+body.single-sp-archive .entry-content h2 a,
+body.single-sp-archive .entry-content h3 a,
+body.single-sp-archive .entry-content h4 a,
+body.single-sp-archive .entry-content h5 a,
+body.single-sp-archive .entry-content h6 a {
+    color: inherit;
+}
+
+body.single-sp-archive .yuki-article-content h1 a:hover,
+body.single-sp-archive .yuki-article-content h2 a:hover,
+body.single-sp-archive .yuki-article-content h3 a:hover,
+body.single-sp-archive .yuki-article-content h4 a:hover,
+body.single-sp-archive .yuki-article-content h5 a:hover,
+body.single-sp-archive .yuki-article-content h6 a:hover,
+body.single-sp-archive .entry-content h1 a:hover,
+body.single-sp-archive .entry-content h2 a:hover,
+body.single-sp-archive .entry-content h3 a:hover,
+body.single-sp-archive .entry-content h4 a:hover,
+body.single-sp-archive .entry-content h5 a:hover,
+body.single-sp-archive .entry-content h6 a:hover {
+    color: var(--yuki-primary-color);
+}
+
+
+/* Excerpt "read more" link keeps its theme styling */
+
+body.single-sp-archive .yuki-entry-excerpt-more-link {
+    color: inherit;
+}
+
+
+/* =================================================================
+   Form Field Styles
+   ================================================================= */
+
+body.single-sp-archive .entry-content .yuki-form-control,
+body.single-sp-archive .entry-content textarea,
+body.single-sp-archive .entry-content select,
+body.single-sp-archive .entry-content .select2-selection--single,
+body.single-sp-archive .entry-content [type=url],
+body.single-sp-archive .entry-content [type=email],
+body.single-sp-archive .entry-content [type=tel],
+body.single-sp-archive .entry-content [type=password],
+body.single-sp-archive .entry-content [type=number],
+body.single-sp-archive .entry-content [type=search],
+body.single-sp-archive .entry-content [type=text],
+body.single-sp-archive .entry-content [type=checkbox],
+body.single-sp-archive .entry-content [type=radio] {
+    border: 1px solid var(--yuki-base-300);
+    background: var(--yuki-base-color);
+    color: var(--yuki-accent-color);
+    padding: 0.5em 1em;
+    border-radius: 4px;
+}
+
+
+/* Hover states for text inputs */
+
+body.single-sp-archive .entry-content textarea:hover,
+body.single-sp-archive .entry-content select:hover,
+body.single-sp-archive .entry-content [type=url]:hover,
+body.single-sp-archive .entry-content [type=email]:hover,
+body.single-sp-archive .entry-content [type=tel]:hover,
+body.single-sp-archive .entry-content [type=password]:hover,
+body.single-sp-archive .entry-content [type=number]:hover,
+body.single-sp-archive .entry-content [type=search]:hover,
+body.single-sp-archive .entry-content [type=text]:hover {
+    border-color: var(--yuki-primary-color);
+}
+
+
+/* Focus states for text inputs */
+
+body.single-sp-archive .entry-content textarea:focus,
+body.single-sp-archive .entry-content select:focus,
+body.single-sp-archive .entry-content [type=url]:focus,
+body.single-sp-archive .entry-content [type=email]:focus,
+body.single-sp-archive .entry-content [type=tel]:focus,
+body.single-sp-archive .entry-content [type=password]:focus,
+body.single-sp-archive .entry-content [type=number]:focus,
+body.single-sp-archive .entry-content [type=search]:focus,
+body.single-sp-archive .entry-content [type=text]:focus {
+    outline: none;
+    border-color: var(--yuki-primary-color);
+    box-shadow: 0 0 0 2px var(--yuki-primary-color);
+}
+
+
+/* Active states for text inputs */
+
+body.single-sp-archive .entry-content textarea:active,
+body.single-sp-archive .entry-content select:active,
+body.single-sp-archive .entry-content [type=url]:active,
+body.single-sp-archive .entry-content [type=email]:active,
+body.single-sp-archive .entry-content [type=tel]:active,
+body.single-sp-archive .entry-content [type=password]:active,
+body.single-sp-archive .entry-content [type=number]:active,
+body.single-sp-archive .entry-content [type=search]:active,
+body.single-sp-archive .entry-content [type=text]:active {
+    border-color: var(--yuki-primary-active);
+}
+
+
+/* Button styles */
+
+body.single-sp-archive .entry-content button,
+body.single-sp-archive .entry-content [type=submit],
+body.single-sp-archive .entry-content [type=button],
+body.single-sp-archive .entry-content [type=reset] {
+    background: var(--yuki-primary-color);
+    color: var(--yuki-base-color);
+    border: 1px solid var(--yuki-primary-color);
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+body.single-sp-archive .entry-content button:hover,
+body.single-sp-archive .entry-content [type=submit]:hover,
+body.single-sp-archive .entry-content [type=button]:hover,
+body.single-sp-archive .entry-content [type=reset]:hover {
+    background: var(--yuki-primary-active);
+    border-color: var(--yuki-primary-active);
+}
+
+body.single-sp-archive .entry-content button:active,
+body.single-sp-archive .entry-content [type=submit]:active,
+body.single-sp-archive .entry-content [type=button]:active,
+body.single-sp-archive .entry-content [type=reset]:active {
+    background: var(--yuki-primary-color);
+    border-color: var(--yuki-primary-color);
+    transform: translateY(1px);
+}
+
+body.single-sp-archive .entry-content button:focus,
+body.single-sp-archive .entry-content [type=submit]:focus,
+body.single-sp-archive .entry-content [type=button]:focus,
+body.single-sp-archive .entry-content [type=reset]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--yuki-primary-color);
+}
+
+
+/* =================================================================
+   Paragraph spacing in post content
+   ================================================================= */
 
 body.single-sp-archive .entry-content p {
     margin-bottom: 15px;
 }
 
 
-/* Archive type display */
+/* =================================================================
+   Archive type display
+   ================================================================= */
 
 body.single-sp-archive .entry-header .sp-archive-type {
     text-align: center;
@@ -20,15 +208,52 @@ body.single-sp-archive .entry-header .sp-archive-type {
 }
 
 
-/* Entry title styling */
+/* =================================================================
+   Heading Styles - Match theme .yuki-heading.yuki-heading-style-1
+   Font sizes and weights inherit from theme customizer settings
+   ================================================================= */
 
-body.single-sp-archive .entry-header .entry-title {
-    font-size: 32px;
-    margin-bottom: 20px;
+body.single-sp-archive .entry-header .entry-title,
+body.single-sp-archive .entry-content h2,
+body.single-sp-archive .entry-content h3,
+body.single-sp-archive .entry-content h4,
+body.single-sp-archive .entry-content h5,
+body.single-sp-archive .entry-content h6 {
     position: relative;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--yuki-base-200);
 }
 
-body.single-sp-archive .entry-header .entry-title::after {
+body.single-sp-archive .entry-header .entry-title {
+    color: var(--yuki-headings-h1-color, var(--yuki-headings-color));
+}
+
+body.single-sp-archive .entry-content h2 {
+    color: var(--yuki-headings-h2-color, var(--yuki-headings-color));
+}
+
+body.single-sp-archive .entry-content h3 {
+    color: var(--yuki-headings-h3-color, var(--yuki-headings-color));
+}
+
+body.single-sp-archive .entry-content h4 {
+    color: var(--yuki-headings-h4-color, var(--yuki-headings-color));
+}
+
+body.single-sp-archive .entry-content h5,
+body.single-sp-archive .entry-content h6 {
+    color: var(--yuki-headings-h5-color, var(--yuki-headings-color));
+}
+
+
+/* Heading underline indicator - matches .yuki-heading-style-1 ::after */
+
+body.single-sp-archive .entry-header .entry-title::after,
+body.single-sp-archive .entry-content h2::after,
+body.single-sp-archive .entry-content h3::after,
+body.single-sp-archive .entry-content h4::after,
+body.single-sp-archive .entry-content h5::after,
+body.single-sp-archive .entry-content h6::after {
     content: "";
     display: block;
     position: absolute;
@@ -74,6 +299,13 @@ body.single-sp-archive .entry-header .entry-title::after {
     border-top: 1px solid currentColor;
 }
 
+
+/* "More from..." heading in footer - uses theme .yuki-heading classes so inherits styling */
+
+.sp-archive-related-posts .yuki-heading h3 {
+    color: var(--yuki-headings-h3-color, var(--yuki-headings-color));
+}
+
 .sp-archive-related-posts .related-posts-list {
     list-style: none;
     padding: 0;
@@ -104,15 +336,20 @@ body.single-sp-archive .entry-header .entry-title::after {
     text-decoration: underline;
 }
 
+
 /* Content area max width */
-body.single-sp-archive .entry-content {
+
+body.single-sp-archive .entry-header,
+body.single-sp-archive .entry-content,
+body.single-sp-archive .entry-footer.sp-archive-footer {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
+
 /* Lightbox image max width */
+
 body.single-sp-archive .wp-lightbox-container img {
     max-width: 400px;
 }
-
